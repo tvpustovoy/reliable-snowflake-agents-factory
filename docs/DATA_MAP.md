@@ -6,6 +6,7 @@ What lives where, what it means, where it came from, and what is still missing.
 - Account: `sfsehol-anthropic_snowflake_hackathon_exwjdc`, database `RECPLACE`, role `ATTENDEE_ROLE`, warehouse `DEFAULT_WH`.
 - Machine-readable layer: semantic view **`RECPLACE.MODEL.FIRN_BUSINESS`** (`sql/factory/20_semantic_view.sql`).
   Start with `DESCRIBE SEMANTIC VIEW RECPLACE.MODEL.FIRN_BUSINESS` or query it via Cortex Analyst.
+- How each object was produced, step by step: `docs/DATA_FLOW.md`.
 - Method docs: `distill/BUSINESS_MODEL.md` (zones), `distill/LENS.md` (what was distilled), `distill/GOALS.md` (goal vertical).
 
 ## Layers
