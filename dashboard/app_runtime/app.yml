@@ -1,0 +1,29 @@
+version: 2
+
+name: FIRN_DASHBOARD
+database: RECPLACE
+schema: APP
+query_warehouse: DEFAULT_WH
+build_eai: FIRN_NPM_EAI
+
+ignore:
+  - node_modules
+  - .env*
+  - __pycache__
+  - "*.pyc"
+  - .next
+  - .git
+  - snowflake.log
+
+install:
+  commands:
+    - ["npm", "ci", "--include=dev"]
+
+build:
+  commands:
+    - ["npm", "run", "build"]
+    - ["cp", "-r", ".next/static", ".next/standalone/.next/static"]
+    - ["rm", "-rf", "node_modules"]
+
+run:
+  command: ["node", ".next/standalone/server.js"]

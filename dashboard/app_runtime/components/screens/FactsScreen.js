@@ -1,38 +1,36 @@
-// Purpose: Facts screen — search the knowledge map and see the verbatim proof behind each fact.
+// Purpose: Facts screen — search proven facts and see the verbatim quote behind each.
+// Sources: MODEL.FIELD_FACTS (gate_passed; snapshot keeps the strongest per subzone).
 import { firn } from "../../lib/firn/logic.js";
-import { Badge, Chips, Empty, Page, Quote } from "../ui.js";
+import { Chips, Empty, Kpis, Page, Quote } from "../ui.js";
 
-const uniq = (xs) => [...new Set(xs)];
+const uniq = (xs) => [...new Set(xs.filter(Boolean))];
 
 export default function FactsScreen() {
   const facts = firn.facts;
+  const st = firn.factStats;
   return (
-    <Page title="Facts" sub="Every fact is a verbatim quote from a source. Search, filter, follow the links.">
+    <Page title="Facts" sub="Every fact is a verbatim quote that passed the SQL gate. Search, filter, check the source.">
+      <Kpis items={[
+        ["Proven facts", Number(st.total).toLocaleString("en")], ["From documents", Number(st.docs).toLocaleString("en")],
+        ["Hypotheses", facts.filter((f) => f.knowledge_state === "hypothesis").length + " shown"], ["Shown here", facts.length],
+      ]} />
       <input className="search" data-search="" placeholder="Search claims and quotes…" aria-label="Search facts" />
       <Chips group="z" label="Zone" values={uniq(facts.map((f) => f.zone))} />
       <Chips group="t" label="Type" values={uniq(facts.map((f) => f.fact_type))} />
-      <Chips group="s" label="Source" values={uniq(facts.map((f) => f.source.type))} />
       <Chips group="k" label="State" values={uniq(facts.map((f) => f.knowledge_state))} />
+      <Chips group="s" label="Speaker" values={uniq(facts.map((f) => f.speaker_role))} />
       <section className="grid" data-list="facts">
-        {facts.map((f) => {
-          const inbound = facts.filter((o) => o.refs.some((r) => r.fact_id === f.id));
-          const conflict = firn.conflicts.find((c) => c.sides.includes(f.id));
-          return (
-            <div key={f.id} id={f.id} className="card" data-item="" data-f-z={f.zone} data-f-t={f.fact_type}
-              data-f-s={f.source.type} data-f-k={f.knowledge_state} data-text={`${f.id} ${f.claim} ${f.quote} ${f.subzone}`}>
-              <div className="head">
-                <small><code>{f.id}</code> · {f.zone} / {f.subzone}</small>
-                <span className="badge n">{f.fact_type}</span>
-              </div>
-              <strong>{f.claim}</strong>
-              <Quote fact={f} />
-              {(f.refs.length > 0 || inbound.length > 0 || conflict) && <hr />}
-              {f.refs.map((r) => <small key={r.fact_id}><b>{r.relation}</b> <a href={"#" + r.fact_id}>{r.fact_id}</a>: {firn.factsById[r.fact_id].claim}</small>)}
-              {inbound.map((o) => <small key={o.id}><b>referenced by</b> <a href={"#" + o.id}>{o.id}</a></small>)}
-              {conflict && <small><b>in conflict</b> {conflict.id}: {conflict.topic} <Badge m={conflict.status} kind={conflict.status === "open" ? "bad" : "ok"} /></small>}
+        {facts.map((f) => (
+          <div key={f.id} id={f.id} className="card" data-item="" data-f-z={f.zone} data-f-t={f.fact_type}
+            data-f-k={f.knowledge_state} data-f-s={f.speaker_role} data-text={`${f.claim} ${f.quote} ${f.subzone}`}>
+            <div className="head">
+              <small><code>{f.id}</code> · {f.zone} / {f.subzone}</small>
+              <span><span className="badge n">{f.fact_type}</span> <span className={"badge " + (f.knowledge_state === "known" ? "ok" : "warn")}>{f.knowledge_state}</span></span>
             </div>
-          );
-        })}
+            <strong>{f.claim}</strong>
+            <Quote fact={f} />
+          </div>
+        ))}
       </section>
       <Empty list="facts" />
     </Page>

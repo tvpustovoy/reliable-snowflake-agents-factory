@@ -3,7 +3,7 @@
 import "./firn.css";
 import { LOGO } from "../lib/firn/logo.js";
 
-export const metadata = { title: "Firn", icons: { icon: LOGO } };
+export const metadata = { title: "Firn Trust Dashboard", icons: { icon: LOGO } };
 
 export default function RootLayout({ children }) {
   return (

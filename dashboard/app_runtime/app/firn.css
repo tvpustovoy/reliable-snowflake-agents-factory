@@ -67,6 +67,7 @@ button.btn.ASK { color: var(--ASK); border: 1px dashed var(--ASK); }
 .done-msg { font-size: 13px; font-weight: 600; color: var(--ACT); }
 
 .quote { border-left: 3px solid var(--accent); padding: 4px 10px; margin: 4px 0; font-style: italic; }
+.quote.orig { font-style: normal; opacity: .65; font-size: .85em; border-left-style: dashed; }
 .sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 10px; }
 .side { border: 1px solid var(--line); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 3px; }
 
@@ -80,3 +81,6 @@ th, td { border: 1px solid var(--line); padding: 6px 9px; text-align: left; vert
 th { font-weight: 650; }
 td.agree { background: var(--ACT-bg); } td.differ { background: var(--ASK-bg); } td.none { color: var(--muted); }
 [hidden] { display: none !important; }
+details.orig { margin: 2px 0 4px; font-size: .8em; }
+details.orig summary { cursor: pointer; color: var(--muted, #888); }
+.brand-name { margin-left: 8px; font-weight: 700; color: var(--brand); white-space: nowrap; }

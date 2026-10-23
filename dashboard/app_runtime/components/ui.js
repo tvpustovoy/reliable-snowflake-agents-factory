@@ -1,33 +1,43 @@
 // Purpose: stateless UI kit + page shell shared by app routes and the agent HTML generator.
 // No hooks, no event props: interactivity comes from data-* attributes (lib/firn/interact.js).
-import { HINT, MANDATES } from "../lib/firn/logic.js";
+import { HINT, MANDATES, firn } from "../lib/firn/logic.js";
 import { LOGO } from "../lib/firn/logo.js";
 
 export const SCREENS = [
-  ["map", "/", "Map"],
+  ["home", "/", "Home"],
+  ["map", "/map", "Map"],
   ["conflicts", "/conflicts", "Conflicts"],
   ["facts", "/facts", "Facts"],
+  ["values", "/values", "Master values"],
   ["agents", "/agents", "Agents"],
   ["gaps", "/gaps", "Gaps"],
   ["evolution", "/evolution", "Evolution"],
-  ["values", "/values", "Master values"],
   ["culture", "/culture", "Culture"],
 ];
+
+// Which data the page shows: live snapshot from Snowflake or the synthetic sample
+export function DataBadge() {
+  const m = firn.meta;
+  return m.mode === "live"
+    ? <span className="badge ok" title={m.source}>live · {String(m.generated).slice(0, 16).replace("T", " ")}</span>
+    : <span className="badge warn">synthetic sample</span>;
+}
 
 export function Nav({ active }) {
   return (
     <nav className="nav">
-      <a href="/" className="brand"><img src={LOGO} alt="Firn" /></a>
+      <a href="/" className="brand"><img src={LOGO} alt="Firn" /><span className="brand-name">Trust Dashboard</span></a>
       {SCREENS.map(([id, href, label]) => (
         <a key={id} href={href} className={id === active ? "on" : ""}>{label}</a>
       ))}
+      <span style={{ marginLeft: "auto" }}><DataBadge /></span>
     </nav>
   );
 }
 
 // Brand bar for standalone agent HTML, where the tab nav is not rendered
 export const BrandBar = ({ label }) => (
-  <header className="nav"><span className="brand"><img src={LOGO} alt="Firn" /></span><span className="muted">{label}</span></header>
+  <header className="nav"><span className="brand"><img src={LOGO} alt="Firn" /></span><span className="muted">{label}</span><span style={{ marginLeft: "auto" }}><DataBadge /></span></header>
 );
 
 export function Page({ title, sub, children }) {
@@ -88,8 +98,8 @@ export function Quote({ fact }) {
   return (
     <>
       <div className="quote">&ldquo;{fact.quote}&rdquo;</div>
-      <small>{fact.speaker_role} · {fact.source.type} <code>{fact.source.ref}</code> · {fact.source.date}
-        {fact.verified && <> · <span className="badge ok">quote verified</span></>}</small>
+      {fact.quote_orig && <details className="orig"><summary>Original (RU)</summary><div className="quote orig" lang="ru">{fact.quote_orig}</div></details>}
+      <small>{fact.speaker_role} · {fact.basket} · {fact.fact_day || "no date"} · <span className="badge ok">quote verified</span></small>
     </>
   );
 }

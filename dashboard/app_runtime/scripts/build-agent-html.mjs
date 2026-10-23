@@ -13,7 +13,8 @@ import css from "../app/firn.css";
 import fs from "node:fs";
 import path from "node:path";
 
-const OUT = path.resolve(process.cwd(), "../agent_html");
+// Live data contains company text: those reports go to the gitignored agent_html/live/.
+const OUT = path.resolve(process.cwd(), firn.live ? "../agent_html/live" : "../agent_html");
 const today = new Date().toISOString().slice(0, 10);
 
 // In a single-file report other screens are not reachable: turn app links into plain text
@@ -25,8 +26,8 @@ for (const [id, , label] of SCREENS) {
   const body = localizeLinks(renderToStaticMarkup(h("div", null, h(BrandBar, { label }), h(SCREEN_COMPONENTS[id]))));
   const meta = {
     generated: today,
-    intent: `Firn ${label} screen as an agent answer`,
-    dataSources: [{ type: "inline", note: "Synthetic data from dashboard/app_runtime/lib/firn/data.json. Target: RECPLACE.MODEL tables." }],
+    intent: `Firn Trust Dashboard — ${label} screen as an agent answer`,
+    dataSources: [{ type: "snapshot", mode: firn.meta.mode, generated: firn.meta.generated, note: firn.live ? "Live snapshot of RECPLACE (docs/DATA_MAP.md) via scripts/export-live.mjs" : "Synthetic sample (lib/firn/sample.json)" }],
     sections: [{ id, title: label, producerNotes: "Rendered from the app's React component; regenerate with npm run agent-html." }],
     mapVersion: firn.version,
   };
@@ -37,7 +38,7 @@ for (const [id, , label] of SCREENS) {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="snowflake-source" content="cortex-agent-authored" />
-<title>Firn: ${label}</title>
+<title>Firn Trust Dashboard: ${label}</title>
 <link rel="icon" href="${LOGO}" />
 <script type="application/json" id="snowflake-report-metadata">${JSON.stringify(meta).replace(/</g, "\\u003c")}</script>
 <style>${css}</style>
@@ -52,5 +53,5 @@ initFirn(document.querySelector("[data-firn-root]"));
 </html>
 `;
   fs.writeFileSync(path.join(OUT, `${id}.html`), html);
-  console.log("wrote", `agent_html/${id}.html`);
+  console.log("wrote", path.relative(process.cwd(), path.join(OUT, `${id}.html`)));
 }

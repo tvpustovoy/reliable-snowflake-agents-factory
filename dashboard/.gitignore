@@ -2,3 +2,5 @@ node_modules/
 .next/
 .venv/
 .cache/
+app_runtime/lib/firn/live/
+agent_html/live/

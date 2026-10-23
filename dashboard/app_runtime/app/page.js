@@ -1,7 +1,7 @@
-// Purpose: / route — Map screen (zone mandates, recommended agent) inside the app shell.
+// Purpose: / route — Home screen (money, goals, decision inbox) inside the app shell.
 import Shell from "../components/Shell.js";
-import Screen from "../components/screens/MapScreen.js";
+import Screen from "../components/screens/HomeScreen.js";
 
 export default function Page() {
-  return <Shell id="map" Screen={Screen} />;
+  return <Shell id="home" Screen={Screen} />;
 }

@@ -2,9 +2,14 @@
   "name": "firn-dashboard",
   "private": true,
   "scripts": {
+    "export-live": "node scripts/export-live.mjs",
+    "select-data": "node scripts/select-data.mjs",
+    "predev": "node scripts/select-data.mjs",
     "dev": "next dev -p 3000",
+    "prebuild": "node scripts/select-data.mjs",
     "build": "next build",
     "start": "next start",
+    "preagent-html": "node scripts/select-data.mjs",
     "agent-html": "esbuild scripts/build-agent-html.mjs --bundle --platform=node --format=esm --packages=external --jsx=automatic --loader:.js=jsx --loader:.css=text --outfile=.cache/build-agent-html.mjs --log-level=warning && node .cache/build-agent-html.mjs"
   },
   "dependencies": { "next": "15.5.4", "react": "19.1.1", "react-dom": "19.1.1" },

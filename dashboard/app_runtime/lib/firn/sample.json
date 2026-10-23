@@ -1,0 +1,1291 @@
+{
+ "_header": "Purpose: synthetic Firn snapshot in the same shape as live/current.json (scripts/export-live.mjs). No company data. Committed so the app runs without Snowflake access.",
+ "meta": {
+  "mode": "sample",
+  "generated": "2026-10-23",
+  "source": "synthetic sample — no company data"
+ },
+ "coverage": [
+  {
+   "zone": "clients_sales",
+   "subzone": "qualification",
+   "facts": 180,
+   "sources": 24,
+   "hypotheses": 27,
+   "open_signals": 54,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "clients_sales",
+   "subzone": "objections",
+   "facts": 220,
+   "sources": 18,
+   "hypotheses": 33,
+   "open_signals": 66,
+   "status": "covered",
+   "conflicts": 6,
+   "high": 2,
+   "violated": 0
+  },
+  {
+   "zone": "clients_sales",
+   "subzone": "closing",
+   "facts": 150,
+   "sources": 18,
+   "hypotheses": 23,
+   "open_signals": 45,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "clients_sales",
+   "subzone": "loss_reasons",
+   "facts": 90,
+   "sources": 12,
+   "hypotheses": 14,
+   "open_signals": 27,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "clients_sales",
+   "subzone": "retention_churn",
+   "facts": 70,
+   "sources": 12,
+   "hypotheses": 11,
+   "open_signals": 21,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "clients_sales",
+   "subzone": "upsell",
+   "facts": 60,
+   "sources": 12,
+   "hypotheses": 9,
+   "open_signals": 18,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "founder_rules",
+   "subzone": "principles",
+   "facts": 80,
+   "sources": 12,
+   "hypotheses": 12,
+   "open_signals": 24,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "founder_rules",
+   "subzone": "sales_rules",
+   "facts": 140,
+   "sources": 18,
+   "hypotheses": 21,
+   "open_signals": 42,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "founder_rules",
+   "subzone": "decision_rights",
+   "facts": 60,
+   "sources": 12,
+   "hypotheses": 9,
+   "open_signals": 18,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "product",
+   "subzone": "value_prop",
+   "facts": 120,
+   "sources": 18,
+   "hypotheses": 18,
+   "open_signals": 36,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "product",
+   "subzone": "features",
+   "facts": 200,
+   "sources": 12,
+   "hypotheses": 30,
+   "open_signals": 60,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "product",
+   "subzone": "limits_bugs",
+   "facts": 90,
+   "sources": 18,
+   "hypotheses": 14,
+   "open_signals": 54,
+   "status": "covered",
+   "conflicts": 9,
+   "high": 3,
+   "violated": 0
+  },
+  {
+   "zone": "product",
+   "subzone": "client_onboarding",
+   "facts": 60,
+   "sources": 12,
+   "hypotheses": 9,
+   "open_signals": 18,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "product",
+   "subzone": "roadmap",
+   "facts": 30,
+   "sources": 6,
+   "hypotheses": 5,
+   "open_signals": 9,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "money_pricing",
+   "subzone": "tariffs",
+   "facts": 110,
+   "sources": 18,
+   "hypotheses": 17,
+   "open_signals": 66,
+   "status": "covered",
+   "conflicts": 12,
+   "high": 4,
+   "violated": 0
+  },
+  {
+   "zone": "money_pricing",
+   "subzone": "discounts_terms",
+   "facts": 70,
+   "sources": 12,
+   "hypotheses": 11,
+   "open_signals": 42,
+   "status": "covered",
+   "conflicts": 9,
+   "high": 3,
+   "violated": 0
+  },
+  {
+   "zone": "money_pricing",
+   "subzone": "payments",
+   "facts": 40,
+   "sources": 6,
+   "hypotheses": 6,
+   "open_signals": 12,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "money_pricing",
+   "subzone": "revenue",
+   "facts": 0,
+   "sources": 0,
+   "hypotheses": 0,
+   "open_signals": 40,
+   "status": "blind",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "money_pricing",
+   "subzone": "costs",
+   "facts": 20,
+   "sources": 6,
+   "hypotheses": 3,
+   "open_signals": 6,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "team_people",
+   "subzone": "roles_ownership",
+   "facts": 60,
+   "sources": 12,
+   "hypotheses": 9,
+   "open_signals": 18,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "team_people",
+   "subzone": "hiring_leaving",
+   "facts": 30,
+   "sources": 6,
+   "hypotheses": 5,
+   "open_signals": 9,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "team_people",
+   "subzone": "staff_training",
+   "facts": 100,
+   "sources": 12,
+   "hypotheses": 15,
+   "open_signals": 30,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "team_people",
+   "subzone": "performance",
+   "facts": 20,
+   "sources": 6,
+   "hypotheses": 3,
+   "open_signals": 6,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "team_people",
+   "subzone": "workload",
+   "facts": 0,
+   "sources": 0,
+   "hypotheses": 0,
+   "open_signals": 40,
+   "status": "blind",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "operations",
+   "subzone": "processes",
+   "facts": 90,
+   "sources": 18,
+   "hypotheses": 14,
+   "open_signals": 27,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "operations",
+   "subzone": "tools_crm",
+   "facts": 50,
+   "sources": 12,
+   "hypotheses": 8,
+   "open_signals": 15,
+   "status": "covered",
+   "conflicts": 6,
+   "high": 2,
+   "violated": 0
+  },
+  {
+   "zone": "operations",
+   "subzone": "support_sla",
+   "facts": 40,
+   "sources": 12,
+   "hypotheses": 6,
+   "open_signals": 12,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "strategy",
+   "subzone": "goals_priorities",
+   "facts": 50,
+   "sources": 6,
+   "hypotheses": 20,
+   "open_signals": 15,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "strategy",
+   "subzone": "segments_niches",
+   "facts": 80,
+   "sources": 18,
+   "hypotheses": 32,
+   "open_signals": 24,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "strategy",
+   "subzone": "competitors",
+   "facts": 30,
+   "sources": 12,
+   "hypotheses": 12,
+   "open_signals": 9,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "strategy",
+   "subzone": "partners",
+   "facts": 0,
+   "sources": 0,
+   "hypotheses": 0,
+   "open_signals": 40,
+   "status": "blind",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "marketing",
+   "subzone": "positioning",
+   "facts": 40,
+   "sources": 12,
+   "hypotheses": 6,
+   "open_signals": 12,
+   "status": "covered",
+   "conflicts": 3,
+   "high": 1,
+   "violated": 0
+  },
+  {
+   "zone": "marketing",
+   "subzone": "channels",
+   "facts": 0,
+   "sources": 0,
+   "hypotheses": 0,
+   "open_signals": 40,
+   "status": "blind",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "marketing",
+   "subzone": "campaigns_content",
+   "facts": 0,
+   "sources": 0,
+   "hypotheses": 0,
+   "open_signals": 40,
+   "status": "blind",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "marketing",
+   "subzone": "brand_reputation",
+   "facts": 20,
+   "sources": 6,
+   "hypotheses": 3,
+   "open_signals": 6,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "marketing",
+   "subzone": "funnel_metrics",
+   "facts": 0,
+   "sources": 0,
+   "hypotheses": 0,
+   "open_signals": 40,
+   "status": "blind",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  },
+  {
+   "zone": "other",
+   "subzone": "other",
+   "facts": 30,
+   "sources": 12,
+   "hypotheses": 5,
+   "open_signals": 9,
+   "status": "covered",
+   "conflicts": 0,
+   "high": 0,
+   "violated": 0
+  }
+ ],
+ "domain": [],
+ "money": [
+  {
+   "bucket": "B1_contradictory_lost_as_won",
+   "meaning": "Lost in CRM but on a won stage",
+   "deals": 40,
+   "amount_rub": 900000
+  },
+  {
+   "bucket": "B2_lost_without_reason",
+   "meaning": "Lost with no recorded reason",
+   "deals": 120,
+   "amount_rub": 2400000
+  },
+  {
+   "bucket": "B4_stalled_near_money",
+   "meaning": "Open, one step from payment, no activity > 30 days",
+   "deals": 18,
+   "amount_rub": 1100000
+  },
+  {
+   "bucket": "B6_departed_manager_mrr",
+   "meaning": "Monthly revenue of clients whose manager left",
+   "deals": 6,
+   "amount_rub": 120000
+  }
+ ],
+ "goals": [
+  {
+   "goal_id": "G1",
+   "title": "Grow revenue to the yearly target",
+   "statement": "Sample goal.",
+   "horizon": "2027",
+   "target_text": "sample target",
+   "alignment": "aligned",
+   "evidence_count": 5
+  },
+  {
+   "goal_id": "G2",
+   "title": "Sell through partners",
+   "statement": "Sample goal.",
+   "horizon": "unknown",
+   "target_text": null,
+   "alignment": "partly",
+   "evidence_count": 3
+  }
+ ],
+ "missions": [
+  {
+   "agent": "FIRN_CHIEF_OF_STAFF",
+   "mission": "M1",
+   "mission_title": "Source of truth about the company",
+   "metric": "Subzones covered (of 37)",
+   "current_value": 30,
+   "owner": "founder",
+   "serves_goals": "G1,G2"
+  },
+  {
+   "agent": "FIRN_CHIEF_OF_STAFF",
+   "mission": "M2",
+   "mission_title": "Money and clients",
+   "metric": "Recoverable money at stake, RUB",
+   "current_value": 4520000,
+   "owner": "head of sales",
+   "serves_goals": "G1"
+  }
+ ],
+ "vertical": [],
+ "proposals": [
+  {
+   "proposal_id": "P-1",
+   "created_at": "2026-10-23T14:50:00",
+   "agent": "FIRN_CHIEF_OF_STAFF",
+   "mission": "M2",
+   "title": "Call back clients of departed managers",
+   "action": "Sample action",
+   "owner_role": "head of sales",
+   "tag": "ACT",
+   "amount_rub": 120000,
+   "evidence": "sample",
+   "conflicts": "",
+   "review_date": "2026-10-30",
+   "status": "proposed"
+  },
+  {
+   "proposal_id": "P-2",
+   "created_at": "2026-10-23T14:55:00",
+   "agent": "FIRN_CHIEF_OF_STAFF",
+   "mission": "M1",
+   "title": "Founder answers open price questions",
+   "action": "Sample action",
+   "owner_role": "founder",
+   "tag": "ASK",
+   "amount_rub": 0,
+   "evidence": "sample",
+   "conflicts": "",
+   "review_date": "2026-10-30",
+   "status": "awaiting_ask"
+  }
+ ],
+ "traces": [
+  {
+   "at": "2026-10-23T14:50:01",
+   "actor": "USER",
+   "role": "ROLE",
+   "event": "proposal_created",
+   "object_id": "P-1"
+  }
+ ],
+ "agentsLive": [
+  {
+   "fqn": "DB.APP.FIRN_CHIEF_OF_STAFF",
+   "name": "FIRN_CHIEF_OF_STAFF",
+   "display": "Firn Chief of Staff",
+   "comment": "",
+   "created_on": "2026-10-23T14:45:00",
+   "model": "claude",
+   "tools": [
+    {
+     "name": "knowledge_search",
+     "type": "cortex_search"
+    },
+    {
+     "name": "business_analyst",
+     "type": "cortex_analyst_text_to_sql"
+    },
+    {
+     "name": "propose_action",
+     "type": "generic"
+    }
+   ],
+   "versions": [
+    "VERSION$1"
+   ],
+   "default_version": "LAST"
+  }
+ ],
+ "conflicts": [
+  {
+   "n": 1,
+   "layer": "fact_vs_fact",
+   "kind": "contradicts",
+   "zone": "money_pricing",
+   "subzone": "tariffs",
+   "severity": 3,
+   "client_id": null,
+   "claim_a": "Three plans: Start 45K, Pro 70K, Network 100K RUB per year.",
+   "claim_b": "Pro is offered at 60K RUB to close faster.",
+   "quote_a": "Start — 45 000, Pro — 70 000, Network — 100 000 per year",
+   "quote_b": "I usually say sixty for Pro, otherwise they leave",
+   "decision_dependency": "An agent quoting price gives a different number depending on which side is true.",
+   "explanation": "Price of the Pro plan",
+   "amount_rub": null
+  },
+  {
+   "n": 2,
+   "layer": "fact_vs_fact",
+   "kind": "contradicts",
+   "zone": "money_pricing",
+   "subzone": "discounts_terms",
+   "severity": 3,
+   "client_id": null,
+   "claim_a": "White-label partners get 30% off.",
+   "claim_b": "White-label partners get 25% off since September.",
+   "quote_a": "white label is minus thirty, always",
+   "quote_b": "since September we give partners twenty five",
+   "decision_dependency": "Partner proposals differ by 5 points of margin.",
+   "explanation": "White-label partner discount",
+   "amount_rub": null
+  },
+  {
+   "n": 3,
+   "layer": "fact_vs_fact",
+   "kind": "contradicts",
+   "zone": "product",
+   "subzone": "limits_bugs",
+   "severity": 2,
+   "client_id": null,
+   "claim_a": "Footfall data is updated weekly everywhere.",
+   "claim_b": "Footfall data lags two weeks in small cities.",
+   "quote_a": "we update footfall every week, all cities",
+   "quote_b": "the numbers for our town are two weeks old",
+   "decision_dependency": "Either way the agent must not promise fresh data for small cities — same action.",
+   "explanation": "How fresh footfall data is",
+   "amount_rub": null
+  },
+  {
+   "n": 4,
+   "layer": "fact_vs_fact",
+   "kind": "contradicts",
+   "zone": "team_people",
+   "subzone": "staff_training",
+   "severity": 3,
+   "client_id": null,
+   "claim_a": "New salespeople shadow 10 calls before their first solo call.",
+   "claim_b": "New hires start solo calls after 3 shadowed calls.",
+   "quote_a": "ten calls listening, then your own",
+   "quote_b": "I listened to three and started calling",
+   "decision_dependency": "The coach agent would schedule a different onboarding plan.",
+   "explanation": "Shadow calls before going solo",
+   "amount_rub": null
+  },
+  {
+   "n": 5,
+   "layer": "fact_vs_fact",
+   "kind": "contradicts",
+   "zone": "clients_sales",
+   "subzone": "qualification",
+   "severity": 2,
+   "client_id": null,
+   "claim_a": "A good client has 2+ locations and a marketing budget.",
+   "claim_b": "Single-location cafes rarely convert.",
+   "quote_a": "if they have two points or more and someone pays for ads — that is our client",
+   "quote_b": "one cafe, one owner — almost never buys",
+   "decision_dependency": "Both sides say the same thing in different words — merged.",
+   "explanation": "Are single-location businesses a target?",
+   "amount_rub": null
+  }
+ ],
+ "conflictMap": [],
+ "facts": [
+  {
+   "id": "F-001",
+   "zone": "money_pricing",
+   "subzone": "tariffs",
+   "claim": "Three plans: Start 45K, Pro 70K, Network 100K RUB per year.",
+   "quote": "Start — 45 000, Pro — 70 000, Network — 100 000 per year",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "wiki",
+   "basket": "wiki",
+   "fact_day": "2026-06-01",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-002",
+   "zone": "money_pricing",
+   "subzone": "tariffs",
+   "claim": "Pro is offered at 60K RUB to close faster.",
+   "quote": "I usually say sixty for Pro, otherwise they leave",
+   "fact_type": "claim",
+   "knowledge_state": "hypothesis",
+   "speaker_role": "sales_manager",
+   "basket": "call",
+   "fact_day": "2026-09-12",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-003",
+   "zone": "money_pricing",
+   "subzone": "tariffs",
+   "claim": "Price is quoted only from the current price policy.",
+   "quote": "We name the price only from the current policy, no improvising",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-09-02",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-004",
+   "zone": "money_pricing",
+   "subzone": "discounts_terms",
+   "claim": "White-label partners get 30% off.",
+   "quote": "white label is minus thirty, always",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-08-20",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-005",
+   "zone": "money_pricing",
+   "subzone": "discounts_terms",
+   "claim": "White-label partners get 25% off since September.",
+   "quote": "since September we give partners twenty five",
+   "fact_type": "claim",
+   "knowledge_state": "hypothesis",
+   "speaker_role": "partner_manager",
+   "basket": "chat",
+   "fact_day": "2026-09-18",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-006",
+   "zone": "money_pricing",
+   "subzone": "discounts_terms",
+   "claim": "Distributors get 40% off.",
+   "quote": "distributor gets forty percent",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-08-20",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-007",
+   "zone": "clients_sales",
+   "subzone": "qualification",
+   "claim": "A good client has 2+ locations and a marketing budget.",
+   "quote": "if they have two points or more and someone pays for ads — that is our client",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "call",
+   "fact_day": "2026-07-15",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-008",
+   "zone": "clients_sales",
+   "subzone": "qualification",
+   "claim": "Single-location cafes rarely convert.",
+   "quote": "one cafe, one owner — almost never buys",
+   "fact_type": "claim",
+   "knowledge_state": "known",
+   "speaker_role": "sales_manager",
+   "basket": "call",
+   "fact_day": "2026-09-20",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-009",
+   "zone": "clients_sales",
+   "subzone": "objections",
+   "claim": "Top objection: 'we already know our area'.",
+   "quote": "they say we know our district ourselves",
+   "fact_type": "claim",
+   "knowledge_state": "known",
+   "speaker_role": "sales_manager",
+   "basket": "call",
+   "fact_day": "2026-08-30",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-010",
+   "zone": "clients_sales",
+   "subzone": "objections",
+   "claim": "Answer the area objection with a competitor heatmap for their street.",
+   "quote": "show them the heatmap of competitors on their own street",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-07-28",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-011",
+   "zone": "clients_sales",
+   "subzone": "closing",
+   "claim": "Deals over 100K need a second call with the founder.",
+   "quote": "anything above a hundred — I join the second call",
+   "fact_type": "decision",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-09-02",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-012",
+   "zone": "clients_sales",
+   "subzone": "closing",
+   "claim": "Deals with a demo on real client data close 2x more often.",
+   "quote": "won rate with live demo 34% vs 17% without",
+   "fact_type": "claim",
+   "knowledge_state": "known",
+   "speaker_role": "crm",
+   "basket": "crm",
+   "fact_day": "2026-10-01",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-013",
+   "zone": "clients_sales",
+   "subzone": "loss_reasons",
+   "claim": "Most losses happen between proposal sent and next call.",
+   "quote": "58% of lost deals stop after 'Proposal sent'",
+   "fact_type": "risk",
+   "knowledge_state": "known",
+   "speaker_role": "crm",
+   "basket": "crm",
+   "fact_day": "2026-10-01",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-014",
+   "zone": "clients_sales",
+   "subzone": "retention_churn",
+   "claim": "Clients who never open the report in month one churn at renewal.",
+   "quote": "if they did not open the report in the first month — they do not renew",
+   "fact_type": "risk",
+   "knowledge_state": "hypothesis",
+   "speaker_role": "support",
+   "basket": "chat",
+   "fact_day": "2026-09-05",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-015",
+   "zone": "product",
+   "subzone": "value_prop",
+   "claim": "Clients value seeing where competitors take their customers.",
+   "quote": "finally I see where people go instead of us",
+   "fact_type": "claim",
+   "knowledge_state": "known",
+   "speaker_role": "client",
+   "basket": "call",
+   "fact_day": "2026-09-25",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-016",
+   "zone": "product",
+   "subzone": "limits_bugs",
+   "claim": "Footfall data lags two weeks in small cities.",
+   "quote": "the numbers for our town are two weeks old",
+   "fact_type": "risk",
+   "knowledge_state": "known",
+   "speaker_role": "client",
+   "basket": "chat",
+   "fact_day": "2026-08-29",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-017",
+   "zone": "product",
+   "subzone": "limits_bugs",
+   "claim": "Footfall data is updated weekly everywhere.",
+   "quote": "we update footfall every week, all cities",
+   "fact_type": "claim",
+   "knowledge_state": "hypothesis",
+   "speaker_role": "product_lead",
+   "basket": "meeting",
+   "fact_day": "2026-09-09",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-018",
+   "zone": "product",
+   "subzone": "client_onboarding",
+   "claim": "Onboarding call within 3 days of payment.",
+   "quote": "after payment we call you within three days",
+   "fact_type": "promise",
+   "knowledge_state": "known",
+   "speaker_role": "sales_manager",
+   "basket": "call",
+   "fact_day": "2026-09-14",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-019",
+   "zone": "team_people",
+   "subzone": "staff_training",
+   "claim": "New salespeople shadow 10 calls before their first solo call.",
+   "quote": "ten calls listening, then your own",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-07-10",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-020",
+   "zone": "team_people",
+   "subzone": "staff_training",
+   "claim": "New hires start solo calls after 3 shadowed calls.",
+   "quote": "I listened to three and started calling",
+   "fact_type": "claim",
+   "knowledge_state": "hypothesis",
+   "speaker_role": "sales_manager",
+   "basket": "chat",
+   "fact_day": "2026-09-01",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-021",
+   "zone": "operations",
+   "subzone": "tools_crm",
+   "claim": "Every call result goes to CRM the same day.",
+   "quote": "result of the call — into CRM the same day",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-08-06",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-022",
+   "zone": "founder_rules",
+   "subzone": "sales_rules",
+   "claim": "Never promise footfall growth numbers to a client.",
+   "quote": "we never promise growth numbers, we show the map",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-07-28",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-023",
+   "zone": "founder_rules",
+   "subzone": "decision_rights",
+   "claim": "Any discount beyond policy needs founder approval.",
+   "quote": "any discount outside the policy — through me",
+   "fact_type": "rule",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-09-02",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  },
+  {
+   "id": "F-024",
+   "zone": "strategy",
+   "subzone": "segments_niches",
+   "claim": "Focus on retail chains with 3–20 locations this year.",
+   "quote": "this year it is chains, three to twenty points",
+   "fact_type": "decision",
+   "knowledge_state": "known",
+   "speaker_role": "founder",
+   "basket": "meeting",
+   "fact_day": "2026-06-15",
+   "amount_rub": null,
+   "strength": 1,
+   "client_id": null
+  }
+ ],
+ "factStats": {
+  "total": 24,
+  "docs": 12,
+  "wave": [
+   {
+    "wave_no": 1,
+    "prompt_version": "sample",
+    "n": 24,
+    "started": "2026-10-23T13:30:00",
+    "finished": "2026-10-23T13:40:00"
+   }
+  ],
+  "by_type": [],
+  "by_basket": []
+ },
+ "signals": [
+  {
+   "id": "G-01",
+   "kind": "gap",
+   "zone": "money_pricing",
+   "subzone": "revenue",
+   "text": "No facts about MRR or revenue at all.",
+   "why_matters": "Chief of Staff cannot answer 'how much do we earn'.",
+   "status": "open"
+  },
+  {
+   "id": "G-02",
+   "kind": "gap",
+   "zone": "marketing",
+   "subzone": "channels",
+   "text": "Where leads come from is unknown.",
+   "why_matters": "Marketing Analyst has nothing to analyse.",
+   "status": "open"
+  },
+  {
+   "id": "G-03",
+   "kind": "gap",
+   "zone": "marketing",
+   "subzone": "funnel_metrics",
+   "text": "No lead volume or conversion numbers.",
+   "why_matters": "Cannot judge which channel pays back.",
+   "status": "open"
+  },
+  {
+   "id": "G-04",
+   "kind": "gap",
+   "zone": "strategy",
+   "subzone": "partners",
+   "text": "Partner list and terms are not described anywhere.",
+   "why_matters": "Discount rules cannot be applied per partner.",
+   "status": "open"
+  },
+  {
+   "id": "G-05",
+   "kind": "gap",
+   "zone": "team_people",
+   "subzone": "workload",
+   "text": "Nothing on team load or bottlenecks.",
+   "why_matters": "Coach cannot plan training time.",
+   "status": "open"
+  },
+  {
+   "id": "Q-01",
+   "kind": "question",
+   "zone": "money_pricing",
+   "subzone": "tariffs",
+   "text": "Is 60K for Pro an approved exception or a habit?",
+   "why_matters": "Resolves C-101 and unlocks price quoting.",
+   "status": "open"
+  },
+  {
+   "id": "Q-02",
+   "kind": "question",
+   "zone": "team_people",
+   "subzone": "staff_training",
+   "text": "Do you want 10 shadow calls enforced for every new hire?",
+   "why_matters": "Resolves C-104.",
+   "status": "open"
+  },
+  {
+   "id": "Q-03",
+   "kind": "question",
+   "zone": "product",
+   "subzone": "roadmap",
+   "text": "What has been promised to clients for the next quarter?",
+   "why_matters": "Agents may repeat promises that are not planned.",
+   "status": "open"
+  }
+ ],
+ "signalCounts": [],
+ "norms": [
+  {
+   "id": "K-1",
+   "zone": "founder_rules",
+   "subzone": "sales_rules",
+   "norm": "Quote prices only from the current price policy. Exceptions need founder approval.",
+   "quote": "Quote prices only from the current price policy. Exceptions need founder approval.",
+   "authority": "L1_document",
+   "violations": 0,
+   "fact_day": "2026-09-01",
+   "basket": "sample"
+  },
+  {
+   "id": "K-2",
+   "zone": "founder_rules",
+   "subzone": "sales_rules",
+   "norm": "Never promise footfall or revenue growth numbers to a client. Show the map instead.",
+   "quote": "Never promise footfall or revenue growth numbers to a client. Show the map instead.",
+   "authority": "L2_founder",
+   "violations": 1,
+   "fact_day": "2026-09-01",
+   "basket": "sample"
+  },
+  {
+   "id": "K-3",
+   "zone": "founder_rules",
+   "subzone": "sales_rules",
+   "norm": "Log every call result in CRM the same day.",
+   "quote": "Log every call result in CRM the same day.",
+   "authority": "L3_practice",
+   "violations": 0,
+   "fact_day": "2026-09-01",
+   "basket": "sample"
+  },
+  {
+   "id": "K-4",
+   "zone": "founder_rules",
+   "subzone": "sales_rules",
+   "norm": "New salespeople shadow at least 10 calls before going solo.",
+   "quote": "New salespeople shadow at least 10 calls before going solo.",
+   "authority": "L1_document",
+   "violations": 1,
+   "fact_day": "2026-09-01",
+   "basket": "sample"
+  }
+ ],
+ "normStats": [],
+ "prices": [
+  {
+   "subzone": "tariffs",
+   "amount_rub": 70000,
+   "n": 2,
+   "first_day": "2026-06-01",
+   "last_day": "2026-06-01",
+   "speakers": [
+    "founder"
+   ],
+   "example": "Pro plan price"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 70000,
+   "n": 2,
+   "first_day": "2026-09-02",
+   "last_day": "2026-09-02",
+   "speakers": [
+    "founder"
+   ],
+   "example": "Pro plan price"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 60000,
+   "n": 2,
+   "first_day": "2026-09-12",
+   "last_day": "2026-09-12",
+   "speakers": [
+    "founder"
+   ],
+   "example": "Pro plan price"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 30,
+   "n": 2,
+   "first_day": "2026-08-20",
+   "last_day": "2026-08-20",
+   "speakers": [
+    "founder"
+   ],
+   "example": "White-label discount"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 25,
+   "n": 2,
+   "first_day": "2026-09-18",
+   "last_day": "2026-09-18",
+   "speakers": [
+    "founder"
+   ],
+   "example": "White-label discount"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 40,
+   "n": 2,
+   "first_day": "2026-08-20",
+   "last_day": "2026-08-20",
+   "speakers": [
+    "founder"
+   ],
+   "example": "Distributor discount"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 3,
+   "n": 2,
+   "first_day": "2026-09-14",
+   "last_day": "2026-09-14",
+   "speakers": [
+    "founder"
+   ],
+   "example": "Onboarding call after payment"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 10,
+   "n": 2,
+   "first_day": "2026-07-10",
+   "last_day": "2026-07-10",
+   "speakers": [
+    "founder"
+   ],
+   "example": "Shadow calls before solo"
+  },
+  {
+   "subzone": "tariffs",
+   "amount_rub": 3,
+   "n": 2,
+   "first_day": "2026-09-01",
+   "last_day": "2026-09-01",
+   "speakers": [
+    "founder"
+   ],
+   "example": "Shadow calls before solo"
+  }
+ ],
+ "priceChanges": [],
+ "crm": {
+  "clients": {
+   "clients": 120,
+   "active": 40,
+   "mrr": 600000,
+   "orphaned": 6,
+   "orphaned_mrr": 120000
+  },
+  "deals": {
+   "deals": 500,
+   "open": 150,
+   "won": 40,
+   "lost": 310,
+   "open_amount": 9000000
+  }
+ }
+}
