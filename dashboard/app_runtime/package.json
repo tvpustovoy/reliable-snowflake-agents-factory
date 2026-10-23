@@ -1,6 +1,12 @@
 {
   "name": "firn-dashboard",
   "private": true,
-  "scripts": { "dev": "next dev -p 3000", "build": "next build", "start": "next start" },
-  "dependencies": { "next": "15.5.4", "react": "19.1.1", "react-dom": "19.1.1" }
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "agent-html": "esbuild scripts/build-agent-html.mjs --bundle --platform=node --format=esm --packages=external --jsx=automatic --loader:.js=jsx --loader:.css=text --outfile=.cache/build-agent-html.mjs --log-level=warning && node .cache/build-agent-html.mjs"
+  },
+  "dependencies": { "next": "15.5.4", "react": "19.1.1", "react-dom": "19.1.1" },
+  "devDependencies": { "esbuild": "0.25.10" }
 }
