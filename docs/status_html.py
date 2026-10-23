@@ -69,6 +69,9 @@ def main():
     snap = re.search(r"Snapshot: \*\*([^*]+)\*\*", md)
     snap = snap.group(1) if snap else ""
     where = find(secs, "Where we are")
+    _, gate = table(find(secs, "Submission gate"))
+    gate_text = [l for l in find(secs, "Submission gate") if l.strip() and not l.startswith("|")]
+    _, arts = table(find(secs, "Submission artifacts"))
     _, outcomes = table(find(secs, "Outcomes"))
     _, ladder = table(find(secs, "Defense ladder"))
     _, cps = table(find(secs, "Checkpoints"))
@@ -81,6 +84,8 @@ def main():
     next_cp = next((r for r in cps if snap_t and r[0] > snap_t.group(1)), None)
     next_step = next((r for r in roadmap if state(r[-1]) != "done"), None)
     green = sum(state(r[-1]) == "done" for r in outcomes)
+    arts_done = sum(state(r[3]) == "done" for r in arts)
+    gate_open = sum(state(r[3]) != "done" for r in gate)
 
     logo = ""
     if LOGO.exists():
@@ -91,12 +96,15 @@ def main():
 <div class="box alert">Next checkpoint<span class="big">{e(next_cp[0]) if next_cp else '—'}</span><span class="muted">{inline(next_cp[1]) if next_cp else ''}</span></div>
 <div class="box">Next build step<span class="big small">{e(next_step[0]) + ' · ' + inline(next_step[2]) if next_step else 'all built'}</span><span class="muted">{inline(next_step[3]) if next_step else ''}</span></div>
 <div class="box">Readiness<span class="big">{green}/{len(outcomes)}</span><span class="muted">outcomes done and demoable</span></div>
+<div class="box {'bad' if gate_open else ''}">Submission<span class="big">{arts_done}/{len(arts)}</span><span class="muted">artifacts done · {gate_open} gate blockers open</span></div>
 </div>"""
 
     steps = "".join(
         f'<div class="step {"ok" if state(r[-1]) == "done" else "wip" if state(r[-1]) == "wip" else ""}">'
         f'<b>{e(r[0])}</b><div>{inline(r[2])}</div><div class="muted">{inline(r[1])} · {inline(r[3]) or BADGE[state(r[3])][1]}</div></div>'
         for r in ladder)
+    gate_rows = "".join(f"<tr><td><b>{e(r[0])}</b></td><td>{inline(r[1])}</td><td>{inline(r[2])}</td><td>{badge(r[3])}</td></tr>" for r in gate)
+    art_rows = "".join(f"<tr><td><b>{e(r[0])}</b></td><td>{inline(r[1])}</td><td>{inline(r[2])}</td><td>{badge(r[3])}</td><td>{inline(r[4])}</td></tr>" for r in arts)
     out_rows = "".join(f"<tr><td><b>{e(r[0])}</b></td><td>{inline(r[1])}</td><td>{inline(r[2])}</td><td>{inline(r[3])}</td><td>{badge(r[4])}</td></tr>" for r in outcomes)
     cp_rows = "".join(f'<tr class="{"next" if r is next_cp else ""}"><td><b>{e(r[0])}</b></td><td>{inline(r[1])}</td></tr>' for r in cps)
     rm_rows = "".join(f'<tr class="{"next" if r is next_step else ""}"><td><b>{e(r[0])}</b></td><td>{inline(r[1])}</td><td>{inline(r[2])}</td><td>{inline(r[3])}</td><td>{badge(r[4])}</td></tr>' for r in roadmap)
@@ -107,7 +115,7 @@ def main():
         "dataSources": [{"type": "file", "path": "docs/STATUS.md"},
                         {"type": "query", "sql": "SELECT * FROM RECPLACE.MODEL.V_MONEY_AT_STAKE"}],
         "sections": [{"id": i, "title": t, "producerNotes": "Rendered from docs/STATUS.md by docs/status_html.py"}
-                     for i, t in (("where-we-are", "Where we are"), ("ladder", "Defense ladder"), ("outcomes", "Outcomes"),
+                     for i, t in (("where-we-are", "Where we are"), ("submission-gate", "Submission gate"), ("artifacts", "Submission artifacts"), ("ladder", "Defense ladder"), ("outcomes", "Outcomes"),
                                   ("checkpoints", "Checkpoints"), ("roadmap", "Roadmap"), ("agent", "Where the agent lives"))],
     }
 
@@ -145,6 +153,13 @@ footer{{margin-top:36px}}
 
 <h2 id="ladder">Defense ladder — what we can defend right now</h2>
 <div class="ladder">{steps}</div>
+
+<h2 id="submission-gate">Submission gate — what stands between us and submitting</h2>
+<div class="muted">{paragraphs(gate_text)}</div>
+<div class="tw"><table><thead><tr><th>#</th><th>Blocker</th><th>Needs</th><th>Status</th></tr></thead><tbody>{gate_rows}</tbody></table></div>
+
+<h2 id="artifacts">Submission artifacts (A01–A13)</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>Artifact</th><th>Form / use</th><th>Status</th><th>Left to do</th></tr></thead><tbody>{art_rows}</tbody></table></div>
 
 <h2 id="outcomes">Outcomes for judges (O1–O8)</h2>
 <div class="tw"><table><thead><tr><th>#</th><th>What judges should take away</th><th>Evidence</th><th>Snowflake objects</th><th>Status</th></tr></thead><tbody>{out_rows}</tbody></table></div>

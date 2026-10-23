@@ -9,6 +9,34 @@ Snapshot: **14:50 PT**. Aggregates only — no customer texts, quotes or names.
 Running in parallel: the agent role (input for the agent compiler), the app, and the 60-second video.
 Cut to stay on time: EVOLVE / replay (L4) and distillation wave 2. Code freeze at 15:30.
 
+## Submission gate (what stands between us and submitting)
+Required by the organizers: **public repo**, **1-minute demo video** of what was built today (public link), **all team members added** in the submission form, demo only of hackathon work. Deadline 16:30 PT.
+
+| # | Blocker | Needs | Status |
+|---|---|---|---|
+| G1 | Video recorded and uploaded | L3 screens (steps 4–7) + render of `video/firn-a`; storyboard ready | ⬜ |
+| G2 | Repo public and pushed | translate RU labels in `sql/model/30_conflicts.sql`; commit parallel-agent files; PII review; push | 🟨 commits local |
+| G3 | Form texts | A02, A03, A05, A07, A12 finalized in English | 🟨 drafts |
+| G4 | Links | public repo URL + video URL (A08) | ⬜ |
+| G5 | Team members | list names in the form and in README | ⬜ |
+
+## Submission artifacts (A01–A13)
+| # | Artifact | Form / use | Status | Left to do |
+|---|---|---|---|---|
+| A01 | Project name & tagline — Firn, *Know what you know. Act anyway.* | form: name | 🟩 | — |
+| A02 | Value case (founder, problems, money at stake) | form: description / impact | 🟨 draft | fill measured numbers from L1/L2 |
+| A03 | Architecture summary (5 dimensions) | form + README | 🟨 draft | confirm each line is built; add a diagram |
+| A04 | Build story (timeline) | form + `BUILD_LOG.md` | 🟨 draft | keep appending until submission |
+| A05 | Viability (one factory, any company) | form | ⬜ | write |
+| A06 | Data & consent (founder consent, phones removed, deletion 27.10) | form + README | 🟩 | — |
+| A07 | Tools used | form | 🟨 draft | remove anything not actually used |
+| A08 | Links (repo, video) | form | ⬜ | after G2 and G1 |
+| A09 | 1-minute demo video | form: **required** | 🟨 script + storyboard + logo ready | render animation, record screens after L3 |
+| A10 | 3-minute live pitch | round 1 | 🟨 draft | rehearse; ≤30 s opener |
+| A11 | Q&A prep | round 1 | 🟨 draft | — |
+| A12 | Built today (evidence list, one line per artifact with time) | form: built during hackathon | ⬜ | derive from A04 |
+| A13 | Public repo ledger (ready / published) | internal control | 🟨 | push on Taras's command |
+
 ## Outcomes (what judges should take away)
 Status: ⬜ not started · 🟨 in progress · 🟩 done and demoable
 
