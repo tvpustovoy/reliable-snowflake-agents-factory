@@ -31,6 +31,16 @@ Status: ⬜ not started · 🟨 in progress · 🟩 done and demoable
 | L3 | L2 + O3 + O6 | "Agents compiled from the map, under control" — **goal** | ⬜ target 15:30 |
 | L4 | L3 + O7 | "A self-improving organization" | cut |
 
+## Checkpoints (PT)
+| Time | Must be 🟩 |
+|---|---|
+| 13:55 | L1 — reached |
+| 14:50 | L2 (moved from 14:00) |
+| 15:30 | L3, code freeze, start recording the video |
+| 16:15 | Form filled, links public |
+| 16:30 | **Submitted** |
+| 16:45 | Pitch, round 1 |
+
 ## Roadmap (PT)
 | # | Window | Step | Done when | Status |
 |---|---|---|---|---|
