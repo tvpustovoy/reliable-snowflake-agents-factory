@@ -1,5 +1,9 @@
 # Firn — Snowflake Agents Factory
 
+[![Firn — 60-second demo](https://img.youtube.com/vi/FquE-ECczJM/maxresdefault.jpg)](https://youtu.be/FquE-ECczJM)
+
+▶ **[Watch the 60-second demo](https://youtu.be/FquE-ECczJM)**
+
 > **Know what you know. Act anyway.**
 > Firn grows business agents inside Snowflake from a company's own messy data —
 > agents that show their evidence, map what they don't know, and still act safely under conflicting, incomplete knowledge.
