@@ -1,0 +1,19 @@
+# secrets
+connections.toml
+config.toml
+*.pem
+*.p8
+.env*
+# real client data — never commit
+data/
+exports/
+*.csv
+*.parquet
+*.jsonl
+!sample/**
+# local/internal
+research/
+notes/
+.DS_Store
+__pycache__/
+.venv/

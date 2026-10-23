@@ -1,0 +1,13 @@
+{"type":"object","required":["asserts","refs","signals"],"properties":{
+ "asserts":{"type":"array","items":{"type":"object",
+   "required":["zone","subzone","claim","quote","speaker_role","fact_type","target_q","knowledge_state","stake"],
+   "properties":{"zone":{"type":"string"},"subzone":{"type":"string"},"claim":{"type":"string"},"quote":{"type":"string"},
+     "speaker_role":{"type":"string"},"fact_type":{"type":"string"},"target_q":{"type":"string"},
+     "knowledge_state":{"type":"string"},"stake":{"type":"string"},"amount_rub":{"type":["number","null"]},
+     "due_date":{"type":["string","null"]},"counterparty":{"type":["string","null"]},
+     "promise_status":{"type":["string","null"]},"deal_hint":{"type":["string","null"]}}}},
+ "refs":{"type":"array","items":{"type":"object","required":["fact_id","relation","quote"],
+   "properties":{"fact_id":{"type":"string"},"relation":{"type":"string"},"quote":{"type":"string"}}}},
+ "signals":{"type":"array","items":{"type":"object","required":["kind","zone","text"],
+   "properties":{"kind":{"type":"string"},"zone":{"type":"string"},"subzone":{"type":"string"},"text":{"type":"string"},
+     "why_matters":{"type":"string"}}}}}}
