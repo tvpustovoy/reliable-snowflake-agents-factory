@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>02 · The self-evolving organization</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="snowflake-source" content="cortex-agent-authored"><style>:root{color-scheme:light dark}body{max-width:900px;margin:0 auto;padding:clamp(16px,4vw,40px);font-family:-apple-system,system-ui,"Segoe UI",sans-serif;line-height:1.6;color:light-dark(#1f2937,#e5e7eb);background:light-dark(#fff,#0b1220)}h1,h2,h3{line-height:1.25;color:light-dark(#0f172a,#f8fafc)}a{color:#2563eb}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:.92em}th,td{border:1px solid light-dark(#e5e7eb,#334155);padding:6px 9px;vertical-align:top;text-align:left}th{background:light-dark(#f1f5f9,#1e293b)}code{background:light-dark(#f1f5f9,#1e293b);padding:1px 4px;border-radius:4px;font-size:.9em}pre{overflow-x:auto;background:light-dark(#f1f5f9,#1e293b);padding:10px;border-radius:8px}pre code{background:none}.back{font-size:.9em}</style>
+</head>
+<body>
+<p class="back"><a href="00-concepts-overview.html">← Concepts overview</a></p>
+<h1 id="02--the-self-evolving-organization">02 · The self-evolving
+organization</h1>
+<p><em>How a company of people and agents remembers what has been
+verified, compiles that knowledge into its executors, and changes its
+own rules — without silently rewriting what it exists for. And how this
+loop runs inside Snowflake.</em></p>
+<p><strong>Origin.</strong> Prior art (8Hats, Jul 2026): «Как
+организация эволюционирует — и где в ней Agents.University»,
+<code>ai-native-vision/vision-v2/narrative/core-technology/core-technology-report-ru.standalone.html</code>
+(canon: <code>core/world-model-books.md</code> v0.2–0.3,
+<code>core/distillation-compilation-beat.md</code>,
+<code>research/self-evolving-org/</code>). Related:
+<code>8hats-worldmodel/</code> (Books, engine), dicodex addendum
+(codex), TARA, Open Digital Employee. <strong>Built during the
+hackathon:</strong> the Snowflake-native realisation of the loop for a
+real company (RecPlace): Books as governed tables, the engine as SQL
+signals and tasks, the beat as distillation + agent compilation,
+ratification and evolution as owner acts and versioned agents
+(§5–§7).</p>
+<hr />
+<h2 id="1-the-idea-in-one-paragraph">1. The idea in one paragraph</h2>
+<p>An organization becomes <strong>self-evolving</strong> when three
+things exist together:</p>
+<ul>
+<li>a <strong>Model</strong> that remembers only what is verified (five
+Books);</li>
+<li>an <strong>Engine</strong> that turns the telemetry of real life
+(conflicts, failures, outcomes) into legitimate changes to that model
+and to the rules;</li>
+<li><strong>Institutions</strong> — rules and services an agent or
+person can rely on even in a crisis.</li>
+</ul>
+<p>People set the goals and the boundaries; inside them, the system
+improves itself. <em>"Change the system. Preserve the mandate."</em>
+Formula: <strong>Trust = Consistency × Reliability.</strong> Zero in
+either factor means zero trust.</p>
+<h2 id="2-zone-i--the-model-five-books--the-engine--the-codex">2. Zone I
+— the Model: five Books + the Engine (+ the Codex)</h2>
+<p>Books are separated <strong>by mode of validity</strong> (how an
+entry is verified), not by topic. That is why this is an architecture
+rather than a list.</p>
+<table>
+<thead>
+<tr>
+<th>Book</th>
+<th>Question</th>
+<th>Validity mode</th>
+<th>Updated by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entities</strong></td>
+<td>Is it who we think it is? Is identity intact?</td>
+<td>identity reconciliation</td>
+<td>rarely, procedurally (like a constitution)</td>
+</tr>
+<tr>
+<td><strong>Knowledge</strong></td>
+<td>Is it true?</td>
+<td>provenance to the line</td>
+<td>distillation (waves)</td>
+</tr>
+<tr>
+<td><strong>Resources</strong></td>
+<td>How much is left? Does the balance close?</td>
+<td>income − spending = balance</td>
+<td><strong>accounting — balances are kept, not distilled</strong></td>
+</tr>
+<tr>
+<td><strong>Relationships</strong></td>
+<td>Is the commitment alive?</td>
+<td>confirmation by the counterparty</td>
+<td>"the counterparty, not us, decides whether an edge is alive"</td>
+</tr>
+<tr>
+<td><strong>Workflows</strong></td>
+<td>Does it reproduce within budget and quality?</td>
+<td>run: plan ↔︎ fact + criteria declared before the run</td>
+<td>action and measurement</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>One canon, declarative shadows.</strong> "$15K pilot" is
+a fact of history in Knowledge and an income line in Resources; the
+other Books hold a shadow reference, not a copy.</p></li>
+<li><p><strong>The Engine is not a sixth Book.</strong> It holds three
+things:</p>
+<ul>
+<li><em>constraints</em> (values, goals, constitution — where to
+search);</li>
+<li><em>zone of proximal development</em> (where to search now);</li>
+<li><em>energy-efficiency criteria</em> (what counts as a find).</li>
+</ul>
+<p>It searches by evolutionary computation: generate variants, test by
+action, discard failures, keep successes (reference: M. Levin,
+TAME).</p></li>
+<li><p><strong>Objective function:</strong> energy-efficiency of
+alignment with reality — the organization keeps finding configurations
+where "learning to learn" costs less attention, tokens, time and
+trust.</p></li>
+<li><p><strong>Codex</strong> (addendum v0.3): the third contour next to
+the Books and the Engine. It holds the enumerated rules of the
+organization, i.e. who may change what and what counts as evidence.
+<strong>Triad: Books (content) · Engine (change) · Codex
+(legitimacy).</strong></p></li>
+</ul>
+<h2 id="3-zone-ii--the-bridge-the-beat-of-inhale-and-exhale">3. Zone II
+— the Bridge: the beat of inhale and exhale</h2>
+<ul>
+<li><strong>Inhale — distillation:</strong> world → model. Extract from
+experts, environment and experience, generalise, strip context,
+universalise — with provenance. (Concept 01 is how we inhale at
+scale.)</li>
+<li><strong>Exhale — compilation:</strong> model → executor. Express
+universal knowledge into a specific agent or person at the right level,
+like a genome expressed into different proteins. <strong>"A small brain
+is not a cut-off piece of a big one."</strong> An agent needs one
+reconciled document optimised for this morning, not "ten linked
+files".</li>
+<li>Neither lives without the other: distillation without compilation
+hoards knowledge nobody can carry into work; compilation without
+distillation multiplies the unverified.</li>
+<li><strong>Red line of the compiler:</strong> the chain claim → source
+(fact-id) must survive compilation.</li>
+<li><strong>Certification:</strong> a daily permit to work after
+self-diagnosis.</li>
+<li><strong>Access by construction:</strong> knowledge is excluded at
+build time, not forbidden at model level — "the best way not to leak a
+secret is not to know it".</li>
+<li><strong>Third derivative:</strong> act (0) → learn (1) → learn to
+learn (2) → continuously make learning-to-learn cheaper (3). Provenance
+at every step makes the loop reproducible <em>and verifiable</em>.</li>
+</ul>
+<p>Prior measurements (8Hats' own corpus, not RecPlace):</p>
+<ul>
+<li>527 files → 480 verified facts in ~10 days;</li>
+<li>cross-vendor re-check of 474/474 facts, 84% confirmed verbatim, 0
+retroactive deletions;</li>
+<li>first compiler run: −47% time, −46% reading tokens, quality 24/24, 0
+fabrications, fact-id preserved 100%.</li>
+</ul>
+<h2 id="4-zone-iii--the-environment-polis-institutions-and-actors">4.
+Zone III — the Environment (polis): institutions and actors</h2>
+<ul>
+<li><strong>Institutions = rules of the game</strong>, presented as
+coverage functions rather than departments:
+<ul>
+<li>Constitution (mission, rights, duties, jurisdiction);</li>
+<li>Identity &amp; registry;</li>
+<li>Conflict resolution &amp; audit ("a contradiction is resolved, not
+voted on");</li>
+<li>Security &amp; access;</li>
+<li>Finance &amp; resources;</li>
+<li>Learning &amp; onboarding (home of the internal university);</li>
+<li>Reputation &amp; trust;</li>
+<li>Processes &amp; roles;</li>
+<li>Infrastructure.</li>
+</ul></li>
+<li><strong>Actors:</strong> autonomous agents and human + agent
+cells.</li>
+<li><strong>Governed self-development:</strong> the organization may
+improve its knowledge, workflows, agents, roles and resource allocation.
+It may <strong>not</strong> silently rewrite its mission, rights or
+power. Gate order is strict:
+<ol type="1">
+<li>goals direct the search;</li>
+<li>rights and invariants define admissibility;</li>
+<li>authority decides who may approve;</li>
+<li>only among changes that passed these gates does efficiency choose
+the best.</li>
+</ol></li>
+<li><strong>Evolution of the environment:</strong> Observe → Propose →
+Ratify → Enact. Constitutional changes (goals, rights, power) always
+need human ratification. <em>Autonomy inside the boundary; human
+sovereignty at the boundary.</em></li>
+<li>Honest hole (from a 72-agent adversarial audit, 31 verified gaps):
+the third floor of the polis, institutions, has no canonical home
+yet.</li>
+</ul>
+<h2 id="5-on-the-boundary--agentsuniversity">5. On the boundary —
+Agents.University</h2>
+<ul>
+<li>An enabler from outside that installs the mechanisms inside and
+teaches the organization to use them: "installs from outside — a living
+mechanism stays inside".</li>
+<li>It follows from the canon: <strong>the Workflows Book is
+class-dependent.</strong> Someone must find once how to train an agent
+of a given class, then replicate it by compilation. That is why people
+must be trained individually and agents need not be.</li>
+<li><strong>It installs:</strong> bootstrap of the five Books and
+provenance standards, institutions turnkey, point-zero controls.</li>
+<li><strong>It coaches people, owners included:</strong> how to govern
+evolution, set goals, keep decisions; onboarding of agents and human +
+agent cells. In a cell, the updated agent coaches the human on what
+changed.</li>
+<li><strong>It gives guidance:</strong> distillation, compilation and
+certification standards; decision methodology; amendment templates and
+ratification procedures.</li>
+<li><strong>Result:</strong> the organization grows its own corporate
+university, linked to the external one (the "Learning &amp; onboarding"
+institution).</li>
+</ul>
+<h2 id="6-product-move-point-zero">6. Product move: point zero</h2>
+<p>We do not sell a finished organization, we sell <strong>a
+seed</strong>: a minimal fact-seed + verification discipline from day
+one + a connected engine. The asymmetry is intentional: the fullest part
+of the seed is the engine, the emptiest are the Books. <strong>An
+organization with empty Books and a living engine fills up; one with
+full Books and no engine only grows stale.</strong></p>
+<h2 id="7-how-this-runs-in-snowflake-what-we-build">7. How this runs in
+Snowflake (what we build)</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Snowflake realisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Five Books</td>
+<td>governed tables in <code>MODEL</code>, one validity mode each:
+<code>FACTS</code> (provenance gate <code>CONTAINS</code>),
+<code>ENTITIES</code> (CRM keys + aliases, reconciliation timestamp),
+<code>RESOURCE_LEDGER</code> (from CRM payments, replayable balance),
+<code>EXPECTATIONS</code> (open → acknowledged → fulfilled only by
+counterparty evidence), <code>WORKFLOW_RUNS</code> (deal = run: canon
+stages ↔︎ actual stage events)</td>
+</tr>
+<tr>
+<td>Declarative shadows</td>
+<td><code>shadow_of</code> reference columns; no copies across
+Books</td>
+</tr>
+<tr>
+<td>Engine</td>
+<td><code>ENGINE_SIGNALS</code> computed by SQL/Tasks: contradictions,
+broken commitments, workflow deviations, stale master values, eval
+regressions → routed `data</td>
+</tr>
+<tr>
+<td>Engine triad</td>
+<td>constraints = codex hard articles + goals; ZPD = need scores
+(concept 01) + open signals; efficiency = cost/quality per cycle in
+<code>HIVE_WAVES</code> and agent runs</td>
+</tr>
+<tr>
+<td>Codex</td>
+<td><code>CODEX_ARTICLES</code> (hard/soft, provenance, proposed →
+ratified → superseded); hard articles injected verbatim into every
+compiled agent</td>
+</tr>
+<tr>
+<td>Inhale</td>
+<td>hive distillation (concept 01)</td>
+</tr>
+<tr>
+<td>Exhale</td>
+<td><code>COMPILE_AGENT(mission)</code> → Cortex Agent: instructions
+(BIOS + role + codex projection), tools (Analyst over semantic view,
+Search over facts/episodes, custom tools); <strong>projection excludes
+knowledge by layer/Book at build time</strong> (+ row access / masking
+policies)</td>
+</tr>
+<tr>
+<td>Red line</td>
+<td>every agent claim carries fact-ids/evidence rows; scorecard checks
+citation survival</td>
+</tr>
+<tr>
+<td>Certification</td>
+<td>eval + ODE scorecard per agent version; a version that fails is not
+promoted</td>
+</tr>
+<tr>
+<td>Observe → Propose → Ratify → Enact</td>
+<td>signals (observe) → proposals with evidence (propose) → owner acts
+in the app (ratify) → recompile / new version (enact); constitutional
+items (goals, rights, codex hard) only via owner</td>
+</tr>
+<tr>
+<td>Third derivative</td>
+<td>per-cycle cost and quality tracked; prompt and lens optimisation
+across waves (concept 01 §2.4)</td>
+</tr>
+<tr>
+<td>Seed (point zero)</td>
+<td>for a new company: RAW load → CORE → seed pass over the canon →
+engine running from day one, Books fill with each wave</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-what-this-means-for-firn">8. What this means for Firn</h2>
+<ul>
+<li>The <strong>agent factory</strong> is the exhale of the beat. The
+<strong>map of knowledge</strong> is the inhale. The
+<strong>engine</strong> is what makes the factory self-improving rather
+than a one-off build.</li>
+<li><strong>"Act under conflict"</strong> is the polis rule applied to
+an agent: act inside the mandate, ask at the boundary, never silently
+change the mandate.</li>
+<li><strong>Evolution vN → vN+1</strong> is Observe → Propose → Ratify →
+Enact applied to agents and to the map, with the owner as ratifier.</li>
+<li><strong>Onboarding sellers</strong> is Agents.University in
+miniature: the same model compiled for a human.</li>
+</ul>
+<h2 id="9-open-questions-to-refine-here">9. Open questions (to refine
+here)</h2>
+<ul>
+<li>Minimal form of Observe → Propose → Ratify → Enact for point zero
+vs. a mature polis.</li>
+<li>Ladders: curriculum pointer moves automatically, trust level
+ratified by owner, growth of authority only via a separate external
+gate.</li>
+<li>Institutions as a measurable variable: does their presence raise
+stability and trust? (prior governance A/B: yes at N=18; untested at
+scale).</li>
+<li>Cross-vendor constitutional audit: can an agent of another vendor
+audit a governance loop it did not grow up in?</li>
+</ul>
+</body>
+</html>

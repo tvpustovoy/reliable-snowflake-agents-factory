@@ -12,7 +12,6 @@ exports/
 *.jsonl
 !sample/**
 # local/internal
-research/
 notes/
 .DS_Store
 __pycache__/

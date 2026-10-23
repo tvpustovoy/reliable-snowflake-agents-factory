@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>03 · TARA — acting under uncertainty, contradiction and limited resources</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="snowflake-source" content="cortex-agent-authored"><style>:root{color-scheme:light dark}body{max-width:900px;margin:0 auto;padding:clamp(16px,4vw,40px);font-family:-apple-system,system-ui,"Segoe UI",sans-serif;line-height:1.6;color:light-dark(#1f2937,#e5e7eb);background:light-dark(#fff,#0b1220)}h1,h2,h3{line-height:1.25;color:light-dark(#0f172a,#f8fafc)}a{color:#2563eb}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:.92em}th,td{border:1px solid light-dark(#e5e7eb,#334155);padding:6px 9px;vertical-align:top;text-align:left}th{background:light-dark(#f1f5f9,#1e293b)}code{background:light-dark(#f1f5f9,#1e293b);padding:1px 4px;border-radius:4px;font-size:.9em}pre{overflow-x:auto;background:light-dark(#f1f5f9,#1e293b);padding:10px;border-radius:8px}pre code{background:none}.back{font-size:.9em}</style>
+</head>
+<body>
+<p class="back"><a href="00-concepts-overview.html">← Concepts overview</a></p>
+<h1
+id="03--tara--acting-under-uncertainty-contradiction-and-limited-resources">03
+· TARA — acting under uncertainty, contradiction and limited
+resources</h1>
+<p><em>A language of action and directed evolution for multi-agent
+systems (people, digital agents, organizations). It keeps the unknown
+unknown, the contradiction visible and the cost of a step explicit — and
+still lets the system agree on the next step.</em></p>
+<p><strong>Origin.</strong> Prior art: TARA white paper 0.4 (4 Oct 2026,
+concept by Taras Pustovoy, TARA Institute for Consciousness and Agency),
+<code>tara-language/</code>
+(<code>sources/TARA_White_Paper_RU.pdf</code>,
+<code>model/concepts.json</code>). TARA defines general primitives; Open
+Digital Employee (concept 04) is their first concretisation for digital
+employees. No TARA compiler or runtime exists. <strong>Built during the
+hackathon:</strong> TARA primitives realised as fields, tables and agent
+rules in Snowflake for the Firn agents (§4).</p>
+<hr />
+<h2 id="1-manifesto-10-statements-condensed">1. Manifesto (10
+statements, condensed)</h2>
+<ol type="1">
+<li><strong>Uncertainty is the starting condition.</strong> Action does
+not wait for full knowledge; partial clarification is not presented as
+final certainty.</li>
+<li><strong>The unknown has the right to stay unknown.</strong> Lack of
+knowledge, lack of choice, contradictory information and closed
+information are distinct, and none becomes a fact, consent or permission
+automatically.</li>
+<li><strong>Resources are finite; a choice has a price.</strong> Time,
+money, attention, energy, compute. The cost of coordination, recovery
+and support is part of the price of a step.</li>
+<li><strong>Contradictions are part of the model.</strong> Conflict can
+be a meaningful signal. Acceptable conditions for the next step are
+enough to move; full unity of views is not required.</li>
+<li><strong>Each participant has their own future.</strong> A shared
+outcome graph is a temporary agreement about part of the future.</li>
+<li><strong>The result includes a state.</strong> Preserving
+participants' abilities, autonomy and quality of relationships can be
+part of the result.</li>
+<li><strong>Clarification through organised action.</strong> Find the
+next admissible step, set its boundaries, budget and stop conditions,
+observe consequences.</li>
+<li><strong>Errors need detection and recovery.</strong> Notice the
+divergence → stop the affected action → clarify consequences → restore
+cooperation.</li>
+<li><strong>Goals and methods can be revised.</strong> Separate an
+interest from fixation on one form of it; keep the grounds and the
+conditions of revision with every decision.</li>
+<li><strong>Cooperation preserves participants' boundaries.</strong>
+Authority, voluntariness, the right to object; if no acceptable joint
+step exists, propose a pause, a different composition or an end.</li>
+</ol>
+<h2 id="2-primitives-candidate-core-modelconceptsjson">2. Primitives
+(candidate core, <code>model/concepts.json</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>Meaning</th>
+<th>Gap TARA names honestly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Participant</strong></td>
+<td>an actor with its own position, capabilities, boundaries</td>
+<td>membership vs role vs authority</td>
+</tr>
+<tr>
+<td><strong>Desired state</strong></td>
+<td>a participant's partial, revisable picture of the desired
+change</td>
+<td>different desired states don't reduce to one metric</td>
+</tr>
+<tr>
+<td><strong>Interest</strong></td>
+<td>what a participant seeks to gain or keep; the method may change</td>
+<td>ownership and disclosure of interests</td>
+</tr>
+<tr>
+<td><strong>Uncertainty</strong></td>
+<td>incompleteness of knowledge; unknown ≠ unchosen ≠ contradictory ≠
+closed</td>
+<td>explicit knowledge states, grounds, freshness; one confidence number
+is not enough</td>
+</tr>
+<tr>
+<td><strong>Resource</strong></td>
+<td>limited capacity incl. time, attention, money, expertise, compute;
+available vs already promised</td>
+<td>reserves, loss limits, no double-promising</td>
+</tr>
+<tr>
+<td><strong>Constraint</strong></td>
+<td>admissibility condition of a step; not overridden by high
+utility</td>
+<td>link to an enforceable stop/review mechanism</td>
+</tr>
+<tr>
+<td><strong>Commitment</strong></td>
+<td>an accepted promise of contribution or result under conditions;
+revising the future keeps the history</td>
+<td>parties, acceptance, deadline, acceptance criteria, lifecycle</td>
+</tr>
+<tr>
+<td><strong>Next step</strong></td>
+<td>a feasible admissible action with contribution, resources,
+observable consequences, loss limits, review moment</td>
+<td>a contract of an agreed step</td>
+</tr>
+<tr>
+<td><strong>Experience</strong></td>
+<td>situation → action → consequences → evaluations; an episode becomes
+a precedent after discussing its applicability</td>
+<td>different evaluations, objections, transfer limits</td>
+</tr>
+<tr>
+<td><strong>Directed evolution</strong></td>
+<td>revising capabilities, relations and rules from experience,
+preserving grounds, authority and commitments</td>
+<td>an admission process for improvements; a new version doesn't prove
+improvement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-knowledge-states-and-five-poisons">3. Knowledge states and
+"five poisons"</h2>
+<p><strong>States a system must keep apart</strong> (white paper, p.
+4):</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>How to work with it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unknown</td>
+<td>record the gap and its effect on the possible step</td>
+</tr>
+<tr>
+<td>not yet chosen</td>
+<td>offer options or an experience that helps decide</td>
+</tr>
+<tr>
+<td>contradictory</td>
+<td>keep the sources and check the divergence</td>
+</tr>
+<tr>
+<td>participants want different things</td>
+<td>discuss conditions of cooperation and distribution of
+consequences</td>
+</tr>
+<tr>
+<td>not disclosed</td>
+<td>respect the boundary, find a solution with available
+information</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Absence of data must never become zero, consent or
+permission.</strong> A gap blocks only the actions for which it is
+critical.</p>
+<p><strong>Interaction distortions (applied analogy of the "five
+poisons")</strong> — what a language must help notice:</p>
+<table>
+<thead>
+<tr>
+<th>Distortion</th>
+<th>Business analogue</th>
+<th>What the system must support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ignorance / not-seeing</td>
+<td>an assumption is taken for fact; one's own limits of knowledge go
+unnoticed</td>
+<td>explicit unknowns, provenance, alternative explanations,
+comprehension checks</td>
+</tr>
+<tr>
+<td>attachment</td>
+<td>fixation on an outcome, metric, role or method despite new
+grounds</td>
+<td>interest ≠ method; alternatives; conditions of revision and
+exit</td>
+</tr>
+<tr>
+<td>aversion</td>
+<td>disagreement turns into a fight with the other side</td>
+<td>expressing boundaries and objections; de-escalation; search for an
+admissible step</td>
+</tr>
+<tr>
+<td>pride</td>
+<td>authority substitutes for grounds; feedback not accepted</td>
+<td>separation of authority and justification; right to contest;
+checking decisions</td>
+</tr>
+<tr>
+<td>envy</td>
+<td>rivalry for recognition, influence, gain</td>
+<td>visible interests and contributions; discussed rules of distribution
+and competition</td>
+</tr>
+</tbody>
+</table>
+<p>Boundary of the analogy: uncertainty ≠ ignorance (you can see the
+limits of knowledge clearly); contradiction ≠ anger; competition for a
+truly scarce resource ≠ envy.</p>
+<h2 id="4-how-firn-uses-tara-in-snowflake">4. How Firn uses TARA in
+Snowflake</h2>
+<table>
+<thead>
+<tr>
+<th>TARA</th>
+<th>Firn / Snowflake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>knowledge states</td>
+<td><code>knowledge_state</code> on every fact, master value and agent
+claim:
+<code>known · unknown · not_chosen · contradictory · divergent_interests · undisclosed · changed</code></td>
+</tr>
+<tr>
+<td>"absence ≠ zero/consent/permission"</td>
+<td>hard rule in agent instructions + eval checks (an agent that answers
+"0" or "allowed" from missing data fails)</td>
+</tr>
+<tr>
+<td>uncertainty, visibly</td>
+<td><code>V_EPISTEMIC_MAP</code>: per Book × domain what is known,
+contested, unchosen, closed — shown, not hidden</td>
+</tr>
+<tr>
+<td>contradiction as signal</td>
+<td><code>CONTRADICTIONS</code> with both sides and sources; agent names
+both sides; acting under conflict = act when the decision is robust
+across versions, ask when not</td>
+</tr>
+<tr>
+<td>participant + interest</td>
+<td><code>PARTICIPANT_INTERESTS</code> (founder, sales lead, sellers,
+clients, partners); conflicts of interest shown, not averaged</td>
+</tr>
+<tr>
+<td>next step</td>
+<td>the <strong>"3 actions" contract</strong>: who · interest ·
+contribution &amp; resource · expected observable signal (SQL metric) ·
+loss limit / stop condition · review_at · blocking unknowns
+(<code>ACTION_PROPOSALS</code>)</td>
+</tr>
+<tr>
+<td>resource, no double-promising</td>
+<td>actions checked against already-committed capacity (e.g. founder
+load)</td>
+</tr>
+<tr>
+<td>commitment</td>
+<td>accepted action → <code>EXPECTATIONS</code> (Relationships Book);
+history never rewritten</td>
+</tr>
+<tr>
+<td>experience</td>
+<td>executed step → outcome record; becomes a precedent only after
+review of applicability</td>
+</tr>
+<tr>
+<td>errors &amp; recovery</td>
+<td><code>ENGINE_SIGNALS</code>: detect divergence → stop affected
+action → clarify → restore</td>
+</tr>
+<tr>
+<td>directed evolution</td>
+<td>agent vN → vN+1 only after measured improvement (scorecard), owner
+ratifies; "a new version doesn't prove improvement"</td>
+</tr>
+<tr>
+<td>five poisons</td>
+<td>lens for "what in our culture hurts us": candidate tensions with
+evidence, ≥2 carriers, the founder's voice counted separately, presented
+as questions to the owner, never as judgement of people</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-why-it-matters-for-the-demo">5. Why it matters for the
+demo</h2>
+<p><em>"Our agent knows what it knows — and shows you the edge of what
+it doesn't."</em> A map of unknowns and an action contract with loss
+limits and review dates are what make delegation to an agent rational
+under real, imperfect knowledge.</p>
+</body>
+</html>

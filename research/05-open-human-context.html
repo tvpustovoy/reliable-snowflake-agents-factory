@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>05 · Open Human Context — the person side</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="snowflake-source" content="cortex-agent-authored"><style>:root{color-scheme:light dark}body{max-width:900px;margin:0 auto;padding:clamp(16px,4vw,40px);font-family:-apple-system,system-ui,"Segoe UI",sans-serif;line-height:1.6;color:light-dark(#1f2937,#e5e7eb);background:light-dark(#fff,#0b1220)}h1,h2,h3{line-height:1.25;color:light-dark(#0f172a,#f8fafc)}a{color:#2563eb}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:.92em}th,td{border:1px solid light-dark(#e5e7eb,#334155);padding:6px 9px;vertical-align:top;text-align:left}th{background:light-dark(#f1f5f9,#1e293b)}code{background:light-dark(#f1f5f9,#1e293b);padding:1px 4px;border-radius:4px;font-size:.9em}pre{overflow-x:auto;background:light-dark(#f1f5f9,#1e293b);padding:10px;border-radius:8px}pre code{background:none}.back{font-size:.9em}</style>
+</head>
+<body>
+<p class="back"><a href="00-concepts-overview.html">← Concepts overview</a></p>
+<h1 id="05--open-human-context--the-person-side">05 · Open Human Context
+— the person side</h1>
+<p><em>"A person changes. Their goals conflict. Their memory is
+selective. Their understanding of themselves is revised. Sometimes they
+lose access to their own ways of coping with what is
+happening."</em></p>
+<p><strong>Origin.</strong> Prior art: Open Human Context (OHC)
+0.1.0-draft.2, <code>open-human-context-specification/</code> (spec
+Apache-2.0, docs CC BY 4.0; name and <code>urn:ohc:</code> namespace
+provisional; not yet published). OHC is the person-side companion of ODE
+(concept 04); it has an internal TARA bridge. <strong>Built during the
+hackathon:</strong> OHC principles applied to <em>company</em> knowledge
+and to the people inside a company (founder, sellers, clients) in
+Snowflake (§4).</p>
+<hr />
+<h2 id="1-what-ohc-is--and-is-not">1. What OHC is — and is not</h2>
+<p>An open, file-based format for the context a person shares with
+agents and services. It keeps <strong>records about a person, each with
+its origin</strong>: primary sources, the experiences they tell of, how
+those were understood then and later, what is stated now, the frameworks
+of description used, the ways of coping tried and whether they helped,
+and the permissions under which any of it may be used.</p>
+<ul>
+<li>The person holds the context (or chooses who does). Agents receive
+<strong>projections</strong> under permission, propose changes, report
+back. The person can confirm, correct, contest, export, erase.</li>
+<li><strong>An ODE package never contains a person's context;</strong>
+it references a projection the person granted.</li>
+<li>Not: a psychological theory or "true model", a diagnosis, agent
+behaviour, an authorization system, a score or ranking of a person, a
+hosted service.</li>
+</ul>
+<p>Two principles: <strong>Preserve experience. Evolve
+interpretations.</strong> · <strong>Help humans remember what they know
+when they need it most.</strong></p>
+<h2 id="2-five-clauses--five-mechanisms">2. Five clauses → five
+mechanisms</h2>
+<table>
+<thead>
+<tr>
+<th>Clause</th>
+<th>Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A person changes</td>
+<td>nothing is current by default; records never change, a change is a
+new record that <code>supersedes</code>; two time axes;
+<strong>freshness computed at use, never stored</strong></td>
+</tr>
+<tr>
+<td>Goals conflict</td>
+<td>contradictory claims coexist; a <code>Tension</code> records a
+conflict that matters and <strong>who decides it</strong>; nothing
+averaged or auto-resolved</td>
+</tr>
+<tr>
+<td>Memory is selective</td>
+<td>primary material kept by reference + hash; an <code>Episode</code>
+carries several dated accounts; readings carry counter-evidence; return
+to the exact span of the original</td>
+</tr>
+<tr>
+<td>Self-understanding is revised</td>
+<td><code>Interpretation</code>s are separate, attributed records on the
+knowledge-time axis (<code>heldDuring</code>): "how did I understand
+this then?" is a query</td>
+</tr>
+<tr>
+<td>Loss of access to coping</td>
+<td><code>Practice</code> + <code>Outcome</code> records; an authorised
+<code>RecallCue</code> lets an agent hand them back, with alternatives
+and a brake against self-confirmation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Experience first:</strong> sources and episodes (what
+happened) are separate from readings (what was made of it).
+<strong>Evidence never depends on a reading</strong> (layer rule G1); a
+new reading never rewrites what happened.</p>
+<h2 id="3-one-record-six-axes-governance">3. One record, six axes;
+governance</h2>
+<p>Status is never one word:</p>
+<ul>
+<li><strong>origin</strong> — declared · observed · inferred · derived ·
+imported · attested (set once);</li>
+<li><strong>endorsement</strong> — the person's stance, incl.
+<em>contested</em> (dispute kept open, nothing deleted);</li>
+<li><strong>epistemic status</strong> — from "as reported" to
+"frame-relative";</li>
+<li><strong>admission</strong> — active context vs. still a
+proposal;</li>
+<li><strong>freshness</strong> — usable as current? computed at
+use;</li>
+<li><strong>disclosure</strong> — sensitivity, categories, handling,
+audience.</li>
+</ul>
+<p>Display labels (stated, confirmed, hypothesis, pending, stale,
+disputed) are <strong>derived</strong>; every status change is an
+appended <code>Review</code>. Rules worth reusing: an agent's reading is
+never <code>declared</code> — it is <code>inferred</code>, starts as a
+proposal and a hypothesis, and needs a separate
+<strong><code>infer</code> permission</strong> with purpose and consent;
+permission to <em>use</em> ≠ permission to <em>infer</em>. Governance: a
+<code>Grant</code> names one grantee, purposes, records, actions, mode,
+expiry (≤1 year; ≤180 days for inference or special categories). What
+leaves is a <strong>projection</strong> (one grantee, one purpose, one
+moment); <strong>no existence oracles</strong> ("not disclosed"
+regardless of whether anything exists); per-grantee aliases; salted
+hash-chained disclosure log of ids, never content. Verbatim originals
+released in tiers (none → index → summary → cited excerpts → verbatim
+with step-up confirmation). Conformance: <strong>L0</strong> minimal ·
+<strong>L1</strong> grounded (grounds, hashes, reviews, layer rules) ·
+<strong>L2</strong> governed (grants, projections, event chain,
+lock).</p>
+<h2 id="4-how-firn-uses-ohc-in-snowflake">4. How Firn uses OHC in
+Snowflake</h2>
+<p>OHC is about persons, but its architecture is exactly what a
+<strong>company</strong> world model needs — and it governs how the
+people inside the company appear in it.</p>
+<table>
+<thead>
+<tr>
+<th>OHC principle</th>
+<th>Firn / Snowflake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preserve experience, evolve interpretations</td>
+<td><code>CORE.SRC_DOCUMENTS</code> / <code>SRC_UTTERANCES</code>
+(experience, immutable, hashed) are separate from <code>FACTS</code>
+(verbatim spans) and from syntheses, narratives, culture hypotheses
+(readings). A new reading never rewrites a fact or a source. = WMLM
+"corpus said ≠ agent consolidated"</td>
+</tr>
+<tr>
+<td>Six status axes</td>
+<td>facts carry <code>origin</code> (declared by owner / observed in CRM
+/ inferred by worker), <code>endorsement</code> (owner confirmed /
+contested), <code>knowledge_state</code> (TARA), <code>admission</code>
+(candidate vs accepted), freshness computed at query
+(<code>valid_as_of</code> + window by kind), <code>disclosure</code>
+(layer, sensitivity) — labels derived in views</td>
+</tr>
+<tr>
+<td>Tension + who decides</td>
+<td><code>CONTRADICTIONS</code> / <code>FORKS</code> name the decider
+(owner); never averaged</td>
+</tr>
+<tr>
+<td>supersedes, two time axes</td>
+<td>master values and facts: <code>updates</code> →
+<code>superseded</code>, history kept; "what did the company believe in
+August?" is a query</td>
+</tr>
+<tr>
+<td>Readings by agents need <code>infer</code></td>
+<td>culture, "five poisons" and seller-related readings are
+<code>inferred</code> hypotheses, admitted only via owner review;
+<strong>no scores or rankings of people</strong></td>
+</tr>
+<tr>
+<td>Projection, not copy</td>
+<td>each compiled agent gets a projection of the world model for its
+purpose (row access / masking by layer, Book, sensitivity); <strong>no
+existence oracles</strong> in agent answers about restricted areas</td>
+</tr>
+<tr>
+<td>Person-side context of employees</td>
+<td>for seller onboarding/coaching: a seller's own context (goals,
+boundaries, preferences, progress) can be held as an OHC context under
+the seller's grant; the ODE agent references the projection, the company
+model does not absorb it</td>
+</tr>
+<tr>
+<td>Disclosure log</td>
+<td>access to sources and quotes logged by id (Snowflake access history
++ our event table)</td>
+</tr>
+<tr>
+<td>Verbatim tiers</td>
+<td>agents show summaries and cited spans; full originals only to
+authorised roles</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why it matters:</strong> trust in a company agent requires
+the same discipline as trust in a personal one — know where every
+statement came from, keep conflicts open until the right person decides,
+and let interpretations evolve without corrupting evidence.</p>
+</body>
+</html>

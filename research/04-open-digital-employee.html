@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>04 · Open Digital Employee — outcomes, five conditions, three quality pillars</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="snowflake-source" content="cortex-agent-authored"><style>:root{color-scheme:light dark}body{max-width:900px;margin:0 auto;padding:clamp(16px,4vw,40px);font-family:-apple-system,system-ui,"Segoe UI",sans-serif;line-height:1.6;color:light-dark(#1f2937,#e5e7eb);background:light-dark(#fff,#0b1220)}h1,h2,h3{line-height:1.25;color:light-dark(#0f172a,#f8fafc)}a{color:#2563eb}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:.92em}th,td{border:1px solid light-dark(#e5e7eb,#334155);padding:6px 9px;vertical-align:top;text-align:left}th{background:light-dark(#f1f5f9,#1e293b)}code{background:light-dark(#f1f5f9,#1e293b);padding:1px 4px;border-radius:4px;font-size:.9em}pre{overflow-x:auto;background:light-dark(#f1f5f9,#1e293b);padding:10px;border-radius:8px}pre code{background:none}.back{font-size:.9em}</style>
+</head>
+<body>
+<p class="back"><a href="00-concepts-overview.html">← Concepts overview</a></p>
+<h1
+id="04--open-digital-employee--outcomes-five-conditions-three-quality-pillars">04
+· Open Digital Employee — outcomes, five conditions, three quality
+pillars</h1>
+<p><em>An open specification for digital employees: connect domain
+expertise, working context and decision rights to achieve agreed,
+measurable outcomes when facts, priorities and resources
+change.</em></p>
+<p><strong>Origin.</strong> Prior art: Open Digital Employee (ODE)
+0.2.0-draft (2026-10-04), <a
+href="https://opendigitalemployee.org">https://opendigitalemployee.org</a>,
+spec <a
+href="https://github.com/opendigitalemployee/specification">https://github.com/opendigitalemployee/specification</a>
+(Apache-2.0 spec &amp; schemas, CC BY 4.0 docs); working corpus
+<code>digital-employee-standard/</code>. ODE concretises TARA (concept
+03) for digital employees; OHC (concept 05) is its person-side
+companion. <strong>Built during the hackathon:</strong> ODE applied to
+agents grown in Snowflake: the company environment built automatically
+from raw data, backward design from a CRM outcome, and the 3×5 scorecard
+computed in SQL (§5).</p>
+<hr />
+<h2 id="1-definition-and-loop">1. Definition and loop</h2>
+<p>A <strong>digital employee</strong> is an agent designed to achieve
+agreed, measurable outcomes — with professional judgment, clear
+responsibility and evidence of what actually happened.</p>
+<ul>
+<li><em>A completed task is an output; an outcome is a measurable
+change.</em> The link between them is a hypothesis to test.</li>
+<li>The world is imperfect: information is missing, outcomes are
+uncertain, interests conflict, resources are limited, conditions change,
+execution can fail.</li>
+<li>Loop: <strong>Understand → Choose a step → Act and check → Adjust
+the next step.</strong> Waiting or stopping can be the right next
+step.</li>
+</ul>
+<h2 id="2-five-conditions-for-success-design-lens">2. Five conditions
+for success (design lens)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Condition</th>
+<th>Agree on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Measurable outcomes &amp; alignment</td>
+<td>baseline, target, time frame, budget, accountable owner</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Domain expertise</td>
+<td>method, work hypotheses, professional quality standards</td>
+</tr>
+<tr>
+<td>03</td>
+<td>A prepared working environment</td>
+<td>sources, freshness, access, dependencies, human workload (incl. the
+cost of review)</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Governance &amp; accountability</td>
+<td>permissions, launch criteria, stop conditions, escalation, audit
+trail</td>
+</tr>
+<tr>
+<td>05</td>
+<td>The right platform, controlled improvement</td>
+<td>runtime capabilities, operating limits, change tests, rollback</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-backward-design-from-outcomes">3. Backward design from
+outcomes</h2>
+<p>Define the outcome (baseline, target, time, budget, owner) → propose
+the work (how it could contribute, deliverable, <strong>what would
+disprove it</strong>) → design the employee (all five conditions; plan
+the checks before building) → build &amp; pilot (routine + edge cases,
+bounded) → measure &amp; learn (output, business impact, <strong>total
+cost incl. human oversight</strong>) → keep / change / stop. Any change
+to the outcome or decision rights goes back to its owner.</p>
+<h2 id="4-three-layers-of-the-package--three-quality-pillars">4. Three
+layers of the package · three quality pillars</h2>
+<p><strong>Layers</strong> (what you keep): <strong>Domain
+expertise</strong> (Agent DNA: methods, skills, hypotheses, decision
+principles, quality standards) · <strong>Company environment</strong>
+(people, business concepts, trusted sources, systems, company rules) ·
+<strong>Your digital employee</strong> (goals, selected work, local
+settings, tool access, decision rights). Versioned JSON + Markdown +
+manifest; the package describes, a runtime executes. Object kinds
+include
+<code>WorldModel, Fact, MasterData, EntityType, EntityRecord, Source, SourceReceipt, Transformation, Evidence, Decision, GoalMap, Policy, Check, Run, ChangeSet, Party, Organization, Role, DigitalEmployee, Agent, ToolBinding…</code>
+(38 in the type catalog).</p>
+<p><strong>Pillars × areas (review lens)</strong> — <em>a digital
+employee your business can rely on</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th><strong>Performance</strong> — does it move the needle?</th>
+<th><strong>Reliability</strong> — can it keep delivering?</th>
+<th><strong>Alignment</strong> — is it pursuing the right goals?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01 Work &amp; outcomes</td>
+<td>useful deliverables; measurable contribution</td>
+<td>verified outputs; exceptions handled</td>
+<td>priorities and commitments respected</td>
+</tr>
+<tr>
+<td>02 Interaction</td>
+<td>clear answers; useful initiative</td>
+<td>context retained; dependable handoffs</td>
+<td>appropriate tone, recipients, boundaries</td>
+</tr>
+<tr>
+<td>03 Knowledge &amp; memory</td>
+<td>relevant knowledge when needed</td>
+<td>traceable sources; stale data detected</td>
+<td>privacy, consent, data boundaries respected</td>
+</tr>
+<tr>
+<td>04 Authority &amp; safety</td>
+<td>enough access to do the job</td>
+<td>failures contained; stop &amp; recovery paths</td>
+<td>permissions and approval rules followed</td>
+</tr>
+<tr>
+<td>05 Oversight &amp; improvement</td>
+<td>impact and total cost measured</td>
+<td>monitoring, regression checks, rollback</td>
+<td>changes approved; goals &amp; obligations preserved</td>
+</tr>
+</tbody>
+</table>
+<p><em>All three matter. A strength in one does not cancel a critical
+failure in another.</em> (No single aggregated score.)</p>
+<h2 id="5-how-firn-uses-ode-in-snowflake">5. How Firn uses ODE in
+Snowflake</h2>
+<p><strong>Positioning.</strong> ODE says what a digital employee needs;
+the hardest part is condition 03 / layer 2 — the <strong>company
+environment</strong>, usually prepared by hand. <strong>Firn builds it
+automatically from raw company data, provably</strong> (concepts 01,
+02), then compiles employees from it.</p>
+<table>
+<thead>
+<tr>
+<th>ODE</th>
+<th>Firn / Snowflake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain expertise layer</td>
+<td>methods (WMLM distillation, TARA rules, sales canon), agent skills
+(contradictions, promises, evidence, replay)</td>
+</tr>
+<tr>
+<td>Company environment layer</td>
+<td>the world model in <code>MODEL</code>: five Books + engine +
+codex</td>
+</tr>
+<tr>
+<td>Digital employee layer</td>
+<td>Cortex Agent compiled by <code>COMPILE_AGENT(mission)</code>:
+instructions, tools, decision rights</td>
+</tr>
+<tr>
+<td>Kinds</td>
+<td><code>WorldModel→MODEL</code>, <code>Fact→FACTS</code>,
+<code>MasterData→MASTER_VALUES</code>,
+<code>EntityRecord→ENTITIES</code>,
+<code>Source/SourceReceipt→CORE.SRC_DOCUMENTS</code> (sha, source_ref),
+<code>Transformation→HIVE_RUNS</code>, <code>Evidence→EVIDENCE</code>,
+<code>Decision→OWNER_ACTS/FORKS</code>,
+<code>Policy→CODEX_ARTICLES</code>, <code>Check→gates/eval</code>,
+<code>Run→agent runs, replay</code>,
+<code>ChangeSet→agent versions</code></td>
+</tr>
+<tr>
+<td>Backward design</td>
+<td><code>OUTCOMES</code> (baseline SQL, target, owner, review_at), e.g.
+share of deals lost after the proposal stage; overdue client
+commitments; founder load</td>
+</tr>
+<tr>
+<td>Work as hypothesis</td>
+<td>each of the agent's "3 actions" names its expected signal and what
+would disprove it (TARA next-step)</td>
+</tr>
+<tr>
+<td>Five conditions</td>
+<td>readiness checklist; each condition points to where it lives in
+Snowflake</td>
+</tr>
+<tr>
+<td>Pillars × areas</td>
+<td><code>ODE_SCORECARD(agent_version, area, pillar, metric, value, threshold, verdict)</code>
+computed in SQL — e.g. Perf·Work = accepted-action rate &amp; replay
+win-rate; Rel·Knowledge = share of claims with a verified verbatim
+quote, stale master values detected; Align·Interaction =
+forbidden-vocabulary gate (RU+EN); Align·Authority = actions above
+mandate routed to the owner; Rel·Oversight = eval regression between
+versions</td>
+</tr>
+<tr>
+<td>Controlled improvement</td>
+<td>new agent version promoted only if the scorecard does not regress;
+rollback = previous version</td>
+</tr>
+<tr>
+<td>Export (optional)</td>
+<td><code>EXPORT_ODE_PACKAGE</code>: the compiled employee as an ODE
+package → portable to Claude Code and other runtimes</td>
+</tr>
+</tbody>
+</table>
+<p>Demo line: <em>"A digital employee your business can rely on —
+measured, not claimed."</em> (the 3×5 matrix, red cells included).</p>
+</body>
+</html>
