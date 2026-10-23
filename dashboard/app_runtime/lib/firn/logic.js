@@ -15,6 +15,8 @@ function english(v) {
 const data = english(raw);
 
 export const MANDATES = ["ACT", "DRAFT", "ASK"];
+export const TRUST_WEIGHT = { ACT: 1, DRAFT: 0.5, ASK: 0 };
+export const TRUST_RULE = "Trust Level = fact-weighted share of the agent's subzones: ACT counts 100%, DRAFT 50%, ASK 0%";
 export const RANK = { ACT: 2, DRAFT: 1, ASK: 0 };
 export const HINT = {
   ACT: "Agent may act",
@@ -80,6 +82,11 @@ function build() {
   const byZone = Object.fromEntries(zones.map((z) => [z.zone, z]));
   const coreZones = zoneNames.filter((z) => z !== "other");
 
+  // Trust Level 0-100: fact-weighted share of the agent's subzones it may rely on (ACT 1, DRAFT 0.5, ASK 0)
+  const trustLevel = (ss) => {
+    const w = ss.reduce((a, s) => a + s.facts, 0);
+    return w ? Math.round((100 * ss.reduce((a, s) => a + s.facts * TRUST_WEIGHT[s.mandate], 0)) / w) : 0;
+  };
   const reach = (req) => {
     const ok = req.filter((z) => byZone[z]);
     return {
@@ -87,6 +94,7 @@ function build() {
       weak: ok.filter((z) => byZone[z].mandate !== "ACT"),
       gaps: ok.flatMap((z) => byZone[z].subs.filter((s) => s.mandate === "ASK").map((s) => `${z}/${s.name}`)),
       trusted: ok.filter((z) => byZone[z].mandate === "ACT").length / ok.length,
+      trustLevel: trustLevel(ok.flatMap((z) => byZone[z].subs)),
     };
   };
 
@@ -105,7 +113,7 @@ function build() {
     ].filter((e) => e.at).sort((x, y) => String(x.at).localeCompare(String(y.at)));
     return {
       ...a, test, missions, proposals: mine, events,
-      ...(test ? { zones: [], mandate: "ASK", weak: [], gaps: [], trusted: 0 } : reach(coreZones)),
+      ...(test ? { zones: [], mandate: "ASK", weak: [], gaps: [], trusted: 0, trustLevel: null } : reach(coreZones)),
     };
   });
   const workingNames = new Set(working.map((a) => a.display));

@@ -103,3 +103,10 @@ export function Quote({ fact }) {
     </>
   );
 }
+
+// Central number of an agent card: Trust Level 0-100 (see TRUST_RULE in lib/firn/logic.js)
+export function TrustLevel({ value }) {
+  if (value === null || value === undefined) return <div className="trust na"><b>—</b><small>Trust Level · not scored (test)</small></div>;
+  const cls = value >= 75 ? "ACT" : value >= 40 ? "DRAFT" : "ASK";
+  return <div className={"trust " + cls}><b>{value}</b><small>Trust Level / 100</small></div>;
+}

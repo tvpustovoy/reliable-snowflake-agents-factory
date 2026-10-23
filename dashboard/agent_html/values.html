@@ -94,6 +94,10 @@ td.agree { background: var(--ACT-bg); } td.differ { background: var(--ASK-bg); }
 details.orig { margin: 2px 0 4px; font-size: .8em; }
 details.orig summary { cursor: pointer; color: var(--muted, #888); }
 .brand-name { margin-left: 8px; font-weight: 700; color: var(--brand); white-space: nowrap; }
+.trust { display: flex; flex-direction: column; align-items: center; margin: 8px 0; }
+.trust b { font-size: 2.6em; line-height: 1; }
+.trust small { color: var(--muted, #888); }
+.trust.ACT b { color: #2e9e5b; } .trust.DRAFT b { color: #d08a12; } .trust.ASK b { color: #d14343; } .trust.na b { color: #999; }
 </style>
 </head>
 <body>

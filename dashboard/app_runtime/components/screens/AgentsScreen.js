@@ -1,8 +1,8 @@
 // Purpose: Agents screen — agents already working in Snowflake (with their evolution) and agents we propose to build.
 // Sources: SHOW/DESCRIBE AGENTS in RECPLACE, V_AGENT_GOAL_METRICS, APP.ACTION_PROPOSALS, FIELD_FACTS waves;
 // proposed agents = mission catalog in lib/firn/logic.js scored against the live map.
-import { CREATE, firn, HINT, rub, short } from "../../lib/firn/logic.js";
-import { Action, Badge, Done, Line, Page } from "../ui.js";
+import { CREATE, firn, HINT, rub, short, TRUST_RULE } from "../../lib/firn/logic.js";
+import { Action, Badge, Done, Line, Page, TrustLevel } from "../ui.js";
 
 const TAG_CLS = { ACT: "ok", HYPOTHESIS: "warn", ASK: "bad", APPROVE: "n" };
 
@@ -14,6 +14,7 @@ function Working({ a, i }) {
         <strong>{a.display}</strong>
         <span><span className={"badge " + (a.test ? "n" : "ok")}>{a.test ? "test" : "working"}</span> {!a.test && <Badge m={a.mandate} />}</span>
       </div>
+      <TrustLevel value={a.trustLevel} />
       <small><code>{a.fqn}</code> · {a.versions.join(", ")} · model {a.model}</small>
       <Line k="Tools">{a.tools.map((t) => t.name).join(", ")}</Line>
       {!a.test && <Line k="Holds back">{a.weak.join(", ") || "nothing"}</Line>}
@@ -55,7 +56,7 @@ function Working({ a, i }) {
 
 export default function AgentsScreen() {
   return (
-    <Page title="Agent factory" sub="Agents already working in Snowflake, and agents the map can compile next. Each gets the mandate its weakest zone allows.">
+    <Page title="Agent factory" sub={`Agents already working in Snowflake, and agents the map can compile next. Each gets the mandate its weakest zone allows. ${TRUST_RULE}.`}>
       <h2>Working</h2>
       <section className="grid">
         {firn.working.map((a, i) => <Working key={a.fqn} a={a} i={i} />)}
@@ -70,6 +71,7 @@ export default function AgentsScreen() {
             <div key={a.name} className={"card " + a.mandate}>
               {i === 0 && <span className="rec">RECOMMENDED</span>}
               <div className="head"><strong>{a.name}</strong><span><span className="badge n">proposed</span> <Badge m={a.mandate} /></span></div>
+              <TrustLevel value={a.trustLevel} />
               <div>{a.mission}</div>
               <small>{HINT[a.mandate]}</small>
               <Line k="Zones">{a.zones.join(", ")}</Line>

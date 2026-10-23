@@ -1,7 +1,7 @@
 // Purpose: Home screen — the founder's front page: digital employees (at work + who to hire next), money on the table,
 // goals, what the agent proposes. Sources: SHOW AGENTS, V_MONEY_AT_STAKE, ORG_GOALS, V_AGENT_GOAL_METRICS, ACTION_PROPOSALS.
-import { CREATE, firn, HINT, rub, short } from "../../lib/firn/logic.js";
-import { Action, Badge, Done, Kpis, Page } from "../ui.js";
+import { CREATE, firn, HINT, rub, short, TRUST_RULE } from "../../lib/firn/logic.js";
+import { Action, Badge, Done, Kpis, Page, TrustLevel } from "../ui.js";
 
 const TAG_CLS = { ACT: "ok", HYPOTHESIS: "warn", ASK: "bad", APPROVE: "n" };
 const ALIGN_CLS = { aligned: "ok", partly: "warn", conflicting: "bad" };
@@ -18,12 +18,13 @@ export default function HomeScreen() {
   return (
     <Page title="Where we are" sub={`Digital employees, money on the table, goals · ${firn.live ? "live data from Snowflake" : "synthetic sample"}`}>
       <h2>Digital employees</h2>
-      <p className="muted">{staff.length} at work in Snowflake{tests.length ? ` (+${tests.length} in testing)` : ""} · {firn.proposed.length} proposed to hire next.</p>
+      <p className="muted">{staff.length} at work in Snowflake{tests.length ? ` (+${tests.length} in testing)` : ""} · {firn.proposed.length} proposed to hire next. {TRUST_RULE}.</p>
       <section className="grid">
         {[...staff, ...tests].map((a) => (
           <div key={a.fqn} className={"card " + (a.test ? "" : a.mandate)}>
             <div className="head"><strong>{a.display}</strong>
               <span><span className={"badge " + (a.test ? "n" : "ok")}>{a.test ? "in testing" : "at work"}</span> {!a.test && <Badge m={a.mandate} />}</span></div>
+            <TrustLevel value={a.trustLevel} />
             <small>{a.missions.length ? a.missions.map((m) => m.mission).join(", ") + " missions" : "no missions yet"} · {a.proposals.length} proposals · {a.tools.length} tools</small>
             {!a.test && <small>{HINT[a.mandate]}</small>}
             <small><a href="/agents">History and evolution</a></small>
@@ -33,6 +34,7 @@ export default function HomeScreen() {
           <div className={"card " + rec.mandate}>
             <span className="rec">HIRE NEXT</span>
             <div className="head"><strong>{rec.name}</strong><Badge m={rec.mandate} /></div>
+            <TrustLevel value={rec.trustLevel} />
             <div>{rec.mission}.</div>
             <small>Zones: {rec.zones.join(", ")} · {HINT[rec.mandate]}</small>
             <div className="actions"><Action id="home-hire" cls={rec.mandate} label={CREATE[rec.mandate].label} msg={`${rec.name}: ${CREATE[rec.mandate].msg}`} /></div>
