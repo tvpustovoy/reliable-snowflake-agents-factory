@@ -4,7 +4,7 @@
 > Firn grows business agents inside Snowflake from a company's own messy data —
 > agents that show their evidence, map what they don't know, and still act safely under conflicting, incomplete knowledge.
 
-*Anthropic × Snowflake Hackathon, Oct 2026.* · **Live build status: [docs/STATUS.md](docs/STATUS.md)**
+*Anthropic × Snowflake Hackathon, Oct 2026.* · **Live build status: [docs/STATUS.md](docs/STATUS.md) · [HTML](docs/STATUS.html)**
 
 ## The problem
 Founders want to grow their business with AI, but their knowledge is scattered across CRM, chats and calls. Agents can't be delegated to, because real knowledge is conflicting and incomplete: agents either make things up or wait for clean data that never comes.
