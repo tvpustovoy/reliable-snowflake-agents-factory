@@ -2,7 +2,24 @@
 
 *How many short-lived LLM workers build one provable world model of a company — coordinated by a shared field of knowledge, not by a dispatcher — and how this runs natively in Snowflake.*
 
-**Origin.** Prior art (8Hats, WM Learning Machine, Aug 2026): `wm-learning-machine/research/distillation-fleet/fleet-report.html`, `CONCEPT.md`, `versions/v1/fleet/FIELD.md` + `field.py` (file-based v1, validated in sandbox and in a first production run on RecPlace). **Built during the hackathon:** the Snowflake-native re-implementation (waves, neighbourhood field, field references, pheromones) described in §4–§7.
+**Origin.** Hive knowledge distillation was first tried three months ago on file-based storage (8Hats, WM Learning Machine, Aug 2026).
+
+**Built during the hackathon.** We re-implemented it natively in Snowflake (§4–§7) and ran it on the pilot company:
+- **The goal comes first.** The business model is split into 9 zones and 37 subzones. The worker brief is derived from target questions Q1–Q9: what to extract, and which fields are needed (amount, due date, counterparty, promise status).
+- **Prompts are compiled and versioned** (`MODEL.PROMPT_VERSIONS`).
+  - Benchmarked prompt × model on the same 20 chunks.
+  - Prompt v3 raised quote faithfulness from ≈3 to ≈4 out of 5. A claim is now backed only by its own quote.
+  - Picked `claude-opus-5-5` for wave 1.
+- **Wave 1:** 1,121 chunks in 638 s.
+  - 5,302 facts, 99.8 % of them passed the SQL quote gate.
+  - All 37 subzones covered; 2,714 open signals.
+  - 0 personal data; failed calls retried automatically.
+- **Conflicts:** embedding-based candidate pairs within a subzone, then an LLM judge.
+  - 341 fact↔fact conflicts, split into changed over time, direct contradiction and rule violation.
+  - 30 fact↔CRM conflicts.
+  - Each conflict is linked to the decision that depends on it.
+- **Organisation goals** distilled from the facts, with evidence and founder/team agreement.
+- **The resulting world model feeds the compiled agent** `FIRN_CHIEF_OF_STAFF`.
 
 ---
 

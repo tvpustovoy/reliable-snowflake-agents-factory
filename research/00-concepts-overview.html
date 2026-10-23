@@ -72,15 +72,13 @@ code { font-size:.88em; background:var(--soft); padding:1px 5px; border-radius:4
 
 <p class="mut">Reliable — Snowflake Agents Factory · 23 Oct 2026</p>
 <h1>Digital employees on the ODE standard, built on Snowflake</h1>
-<p class="lead">We took the open <b>Open Digital Employee</b> standard we have been working on and, building on it, create <b>digital employees for small businesses</b> on <b>Snowflake</b> (pilot: RecPlace). The goal is not just to build an agent. It is a digital employee you can delegate to: it acts proactively under uncertainty and is accountable for results. ODE, TARA and OHC are openly published approaches and methods, not code. Everything on Snowflake is built during the hackathon.</p>
+<p class="lead">We took the open <b>Open Digital Employee</b> standard we have been working on and, building on it, create <b>digital employees for small businesses</b> on <b>Snowflake</b> (pilot: RecPlace). The goal is not just to build an agent. It is a digital employee you can delegate to: it acts proactively under uncertainty and is accountable for results. ODE and TARA are openly published approaches and methods, not code. Everything on Snowflake is built during the hackathon.</p>
 <h2 id="flow">Implementation diagram</h2>
 <div class="flowbox">
-<svg viewBox="0 0 1240 380" role="img" aria-label="Diagram: ODE standard as the frame; goal → data → 01 knowledge distillation → 02 world model (company environment) → compilation → digital employee (03 TARA, rights) → outcomes → scorecard and evolution; 05 OHC is the data discipline">
+<svg viewBox="0 0 1240 380" role="img" aria-label="Diagram: ODE standard as the frame; goal → data → 01 knowledge distillation → 02 world model (company environment) → compilation → digital employee (03 TARA, rights) → outcomes → scorecard and evolution">
   <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
   <rect x="6" y="6" width="1228" height="320" rx="18" fill="#ea580c" fill-opacity=".05" stroke="#ea580c" stroke-width="2.5"/>
   <text x="22" y="30" font-size="15" fill="#ea580c" font-weight="800">ODE standard — 5 conditions · 3 layers · 3 pillars</text>
-  <rect x="190" y="50" width="640" height="215" rx="14" fill="none" stroke="#db2777" stroke-width="1.8" stroke-dasharray="6 5"/>
-  <text x="206" y="70" font-size="12" fill="#db2777" font-weight="700">05 · OHC — experience ≠ interpretation · statuses · projections under grants</text>
 
   <rect x="22" y="105" width="150" height="110" rx="12" fill="#ea580c" opacity=".16" stroke="#ea580c" stroke-width="2"/>
   <text x="97" y="132" text-anchor="middle" font-size="15" font-weight="800" fill="#ea580c">Goal</text>
@@ -131,7 +129,7 @@ code { font-size:.88em; background:var(--soft); padding:1px 5px; border-radius:4
 
   <path d="M1157,205 C1157,300 699,300 699,239" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#ar)"/>
   <text x="935" y="296" text-anchor="middle" font-size="12" fill="#7c3aed" font-weight="600">02 · evolution v → v+1 with ratification · ODE scorecard · condition 05</text>
-  <text x="620" y="356" text-anchor="middle" font-size="12" fill="currentColor" opacity=".75">ODE says “what is needed”; building blocks 01 · 02 · 03 · 05 say “how” on Snowflake</text>
+  <text x="620" y="356" text-anchor="middle" font-size="12" fill="currentColor" opacity=".75">ODE says “what is needed”; building blocks 01 · 02 · 03 say “how” on Snowflake</text>
 </svg>
 </div>
 
@@ -186,20 +184,20 @@ code { font-size:.88em; background:var(--soft); padding:1px 5px; border-radius:4
   <div class="more">Read more: <a href="03-tara-acting-under-uncertainty.html">03-tara-acting-under-uncertainty.html</a></div>
 </div>
 
-<div class="card" style="--c:var(--c5)">
-  <h3><span class="num">05</span>Open Human Context</h3>
-  <div class="one">How to keep the evidence honest and respect the data boundaries of people (conditions 03, 04; Alignment pillar).</div>
+<div class="card" style="--c:var(--ode)">
+  <h3><span class="num">04</span>Open Digital Employee — the standard</h3>
+  <div class="one">The frame we implement: what a digital employee needs before a business can delegate work to it.</div>
   <dl>
-    <dt>Why the standard needs this method</dt>
-    <dd>ODE requires respecting privacy, consent and data boundaries, and a company is its people: the founder alone accounts for 62% of internal utterances. OHC keeps experience separate from interpretation and gives each record 6 status axes. It holds a conflict open until its owner decides and releases only a projection under a grant.</dd>
+    <dt>Why we build on it</dt>
+    <dd>ODE says <i>what</i> must be in place: 5 conditions, 3 package layers, and 3 pillars × 5 areas for review. The other building blocks are our answer to <i>how</i> to do it on Snowflake from a company's own data.</dd>
     <dt>What it gives</dt>
-    <dd><ul><li>a new interpretation never overwrites the fact;</li><li>the history of knowledge is a query, so nothing is lost;</li><li>conclusions about people are hypotheses, not ratings; access is logged.</li></ul></dd>
+    <dd><ul><li>backward design from a measurable outcome;</li><li>the company environment as an explicit layer, which we build automatically;</li><li>a trust review without a single score: Performance · Reliability · Alignment.</li></ul></dd>
     <dt>In Snowflake</dt>
-    <dd>CORE ≠ FACTS ≠ syntheses · row access and masking · access history</dd>
+    <dd><code>OUTCOMES</code> · <code>ODE_SCORECARD</code> · Cortex Agent with caller's rights and traces</dd>
     <dt>Proves</dt>
-    <dd><span class="tag">O2</span><span class="tag">O6 trust by design</span><span class="tag">Align · Knowledge</span></dd>
+    <dd><span class="tag">O5 money at stake</span><span class="tag">O6 trust</span><span class="tag">O3</span></dd>
   </dl>
-  <div class="more">Read more: <a href="05-open-human-context.html">05-open-human-context.html</a></div>
+  <div class="more">Read more: <a href="04-open-digital-employee.html">04-open-digital-employee.html</a> · <a href="https://opendigitalemployee.org">opendigitalemployee.org</a></div>
 </div>
 
 </div>
