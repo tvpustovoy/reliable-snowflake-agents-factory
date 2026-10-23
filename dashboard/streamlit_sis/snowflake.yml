@@ -1,0 +1,13 @@
+# Purpose: snow CLI project for the Streamlit-in-Snowflake dashboard.
+# Run: snow streamlit deploy (set query_warehouse to <WAREHOUSE> of your account).
+definition_version: 2
+entities:
+  firn_dashboard:
+    type: streamlit
+    identifier:
+      name: FIRN_DASHBOARD
+    main_file: streamlit_app.py
+    query_warehouse: "<WAREHOUSE>"
+    artifacts:
+      - streamlit_app.py
+      - environment.yml

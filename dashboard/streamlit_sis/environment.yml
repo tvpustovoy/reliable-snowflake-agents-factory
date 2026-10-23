@@ -1,0 +1,6 @@
+# Purpose: package list for the Streamlit-in-Snowflake runtime.
+name: firn_dashboard
+channels:
+  - snowflake
+dependencies:
+  - pandas
